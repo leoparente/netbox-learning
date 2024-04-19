@@ -1,0 +1,3 @@
+python-dotenv
+pyats[library]
+pyats.contrib

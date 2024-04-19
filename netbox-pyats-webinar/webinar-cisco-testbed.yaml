@@ -1,0 +1,73 @@
+devices:
+  CSR1:
+    alias: CSR1
+    connections:
+      cli:
+        ip: 10.90.0.35
+        protocol: ssh
+    credentials:
+      default:
+        password: '%ENV{DEF_PYATS_PASS}'
+        username: '%ENV{DEF_PYATS_USER}'
+    os: iosxe
+    platform: iosxe
+    type: CSR1000V
+  CSR2:
+    alias: CSR2
+    connections:
+      cli:
+        ip: 10.90.0.36
+        protocol: ssh
+    credentials:
+      default:
+        password: '%ENV{DEF_PYATS_PASS}'
+        username: '%ENV{DEF_PYATS_USER}'
+    os: iosxe
+    platform: iosxe
+    type: CSR1000V
+testbed:
+  credentials:
+    default:
+      password: '%ENV{DEF_PYATS_PASS}'
+      username: '%ENV{DEF_PYATS_USER}'
+topology:
+  CSR1:
+    interfaces:
+      GigabitEthernet1:
+        alias: CSR1_GigabitEthernet1
+        ipv4: 10.90.0.35/27
+        type: ethernet
+      GigabitEthernet2:
+        alias: CSR1_GigabitEthernet2
+        ipv4: 192.168.1.1/30
+        link: cable_num_34
+        type: ethernet
+      GigabitEthernet3:
+        alias: CSR1_GigabitEthernet3
+        type: ethernet
+      GigabitEthernet4:
+        alias: CSR1_GigabitEthernet4
+        type: ethernet
+      GigabitEthernet5:
+        alias: CSR1_GigabitEthernet5
+        type: ethernet
+  CSR2:
+    interfaces:
+      GigabitEthernet1:
+        alias: CSR2_GigabitEthernet1
+        ipv4: 10.90.0.36/27
+        type: ethernet
+      GigabitEthernet2:
+        alias: CSR2_GigabitEthernet2
+        ipv4: 192.168.1.2/30
+        link: cable_num_34
+        type: ethernet
+      GigabitEthernet3:
+        alias: CSR2_GigabitEthernet3
+        type: ethernet
+      GigabitEthernet4:
+        alias: CSR2_GigabitEthernet4
+        type: ethernet
+      GigabitEthernet5:
+        alias: CSR2_GigabitEthernet5
+        type: ethernet

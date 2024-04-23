@@ -88,7 +88,7 @@ Configuring testbed default credentials.
 Retrieving associated data for CSR1...
 Retrieving associated data for CSR2...
 Testbed file generated: 
-webinar-cisco-testbed.yaml 
+testbed.yaml 
 ```
 **Option 2**
 Run the `generate_testbed_file.py` Python script. Note that where a value is prefixed with `os.getenv` or `%ENV` then these values are being pulled in from the local environment variables that you need to set with the `export` command eg. `export NETBOX_URL=https://example.cloud.netboxapp.com/`, `export DEF_PYATS_USER=admin`.

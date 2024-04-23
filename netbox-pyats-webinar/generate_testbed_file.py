@@ -1,12 +1,15 @@
+# filename: generate_testbed_file.py
+
+# Description: This script generates a testbed file based on the Netbox data
+#              using the pyATS framework. It uses the Netbox class from the
+#              pyats.contrib.creators.netbox module to create the testbed file.
+
+# Import the necessary libraries
 from pyats.contrib.creators.netbox import Netbox
-from dotenv import load_dotenv
 import yaml
 import os
 
-# Load environment variables
-load_dotenv()
-
-# Get environment variables from .env file and set url_filter
+# Define Netbox URL, user token, and default credentials
 netbox_url = os.getenv('NETBOX_URL')
 user_token = os.getenv('NETBOX_USER_TOKEN')
 def_user = '%ENV{DEF_PYATS_USER}'
@@ -16,7 +19,7 @@ url_filter = 'site=pyats-webinar'
 # url_filter = 'site=pyats-webinar&os=ios-xe'
 # url_filter = 'platform=ios-xe'
 
-# Create Netbox object and build testbed data structure
+# Create testbed object and build data structure
 nb_testbed = Netbox(
     netbox_url=netbox_url,
     user_token=user_token,

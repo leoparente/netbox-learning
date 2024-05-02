@@ -1,6 +1,6 @@
 # netbox-pyats-webinar
 
-Code to accompany the **Webinar: Getting Started with Network Test Automation: NetBox + pyATS +** hosted by **NetBox Labs** on 23rd April 2024.
+Code to accompany the **Webinar: Getting Started with Network Test Automation: NetBox + pyATS +** hosted by **NetBox Labs** on 23rd April 2024. Click [here](https://netboxlabs.com/events/webinar-getting-started-with-network-test-automation-netbox-pyats-genie/) to watch the webinar on-demand. 
 
 ## Get Access to a NetBox instance
 

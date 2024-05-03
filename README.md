@@ -5,6 +5,16 @@
 
 ## 🧑🏻‍🏫 Tutorials and webinars
 
+### Getting Started with Network Test Automation: NetBox + pyATS + Genie
+
+[README.md](netbox-pyats/README.md)
+
+Learn how to get started with network test automation using NetBox, pyATS and Genie. 
+
+- Introduction to NetBox, pyATS and Genie: Discover what each of these amazing tools can do and how they fit together in a modern network automation solution.
+- Using NetBox as a Dynamic Inventory Source for pyATS: Learn how to integrate NetBox with pyATS for efficient testbed file creation.
+- Automated Network Testing: Learn how to get started validating your network state by automating some simple pre and post change network testing.
+
 ### Netbox <> Cisco Catalyst Centre integration with Ansible
 <img src="images/cisco-cc-thumbnail.png" align="right" width="130" />
 
@@ -29,21 +39,21 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 🚛 NetBox OSS releases
 
 
-- [v3.7.3 - 2024-02-21](https://github.com/netbox-community/netbox/releases/tag/v3.7.3) 🌟
-- [v3.7.2 - 2024-02-05](https://github.com/netbox-community/netbox/releases/tag/v3.7.2)
-- [v3.7.1 - 2024-01-17](https://github.com/netbox-community/netbox/releases/tag/v3.7.1)
-- [v3.7.0 - 2023-12-29](https://github.com/netbox-community/netbox/releases/tag/v3.7.0)
-- [v3.6.9 - 2023-12-28](https://github.com/netbox-community/netbox/releases/tag/v3.6.9)
+- [v3.7.7 - 2024-05-01](https://github.com/netbox-community/netbox/releases/tag/v3.7.7) 🌟
+- [v4.0-beta2 - 2024-04-22](https://github.com/netbox-community/netbox/releases/tag/v4.0-beta2)
+- [v3.7.6 - 2024-04-22](https://github.com/netbox-community/netbox/releases/tag/v3.7.6)
+- [v3.7.5 - 2024-04-04](https://github.com/netbox-community/netbox/releases/tag/v3.7.5)
+- [v4.0-beta1 - 2024-04-03](https://github.com/netbox-community/netbox/releases/tag/v4.0-beta1)
 
 
 ## 📝 Latest blog articles
 
 
-- [NetBox Labs Introduces NetBox Event Streams: Pioneering Event-Driven Architectures for Network Automation](https://netboxlabs.com/blog/netbox-labs-introduces-netbox-event-streams/) by Mark Coleman.
-- [Getting Started With NetBox Reports](https://netboxlabs.com/blog/getting-started-with-netbox-reports/) by Rich Bibby.
-- [New NetBox Training Courses Available Today!](https://netboxlabs.com/blog/new-netbox-training-courses-available-today/) by Kris Beevers.
-- [Learning from a decade of DevOps: A retrospective at NetDevOps Days New York](https://netboxlabs.com/blog/learning-from-a-decade-of-devops/) by Kiley Nichols.
-- [Our Network Discovery and Assurance Partnerships and NetBox Labs’ Big Tent Philosophy](https://netboxlabs.com/blog/our-network-discovery-and-assurance-partnerships/) by Mark Coleman.
+- [Announcing the NetBox Labs Resource Center](https://netboxlabs.com/blog/netbox-labs-announces-resource-center/) by Richard Boucher.
+- [The State of Network Automation in 2024](https://netboxlabs.com/blog/the-state-of-network-automation-in-2024/) by Kris Beevers.
+- [NetBox Labs Adds Dozens of Enterprise Customers, Including Seven Fortune 500 Organizations, and Celebrates Massive NetBox Innovation and Community Growth In First Year](https://netboxlabs.com/news/netbox-labs-customer-product-community-momentum/) by Kiley Nichols.
+- [Navigating Network Automation with NetBox – The Design Stage](https://netboxlabs.com/blog/navigating-network-automation-with-netbox-the-design-stage/) by Mark Coleman.
+- [Introducing Diode: Streamlining Data Ingestion in NetBox](https://netboxlabs.com/blog/introducing-diode-streamlining-data-ingestion-in-netbox/) by Richard Boucher.
 
 
 ## Youtube videos
@@ -51,18 +61,17 @@ This webinar shows you how to get started on your Network Automation journey wit
 
 
 
-- [What Does Being the Commercial Steward of NetBox OSS Really Mean?](https://www.youtube.com/watch?v=d5puGly5Owo)<br>In this video, NetBox Labs Co-founder and CEO Kris Beevers shares why supporting and growing the NetBox community is a top priority at NetBox Labs and what being the commercial steward of NetBox OSS r...<br/><img src="https://i1.ytimg.com/vi/d5puGly5Owo/hqdefault.jpg" width=160/>
+- [NetBox Automation Heroes: Taking the Luck Out of Design & Operations with NetBox, ContainerLab & NRX](https://www.youtube.com/watch?v=xemyVQbaWq4)<br>NetBox Automation Heroes is a video series inspired by the Netbox and network automation communities. 
 
-- [NetBox v3.7: Event Rules](https://www.youtube.com/watch?v=eavpywH0LfY)<br>In this video we are going to look at a great new feature that was added in NetBox version 3.7, called Event Rules. which can be used to send Webhooks or execute custom scripts automatically in respon...<br/><img src="https://i2.ytimg.com/vi/eavpywH0LfY/hqdefault.jpg" width=160/>
+In Episode 1, Mark Coleman, Chief Evangelist of NetBox Labs, is joined by Roman Dodin, Product L...<br/><img src="https://i1.ytimg.com/vi/xemyVQbaWq4/hqdefault.jpg" width=160/>
 
-- [NetBox v3.7: VPN tunnels](https://www.youtube.com/watch?v=l72Mbopu_gQ)<br>In this video I will show you how you can model your VPN tunnels in NetBox, using a great new feature that was added in NetBox version 3.7 NetBox can now model private tunnels formed among virtual ter...<br/><img src="https://i1.ytimg.com/vi/l72Mbopu_gQ/hqdefault.jpg" width=160/>
+- [Securing NetBox Cloud with Prefix Lists](https://www.youtube.com/watch?v=nPwL7ve513g)<br>You can secure access to your NetBox Cloud instance by adding IPv4 and IPv6 addresses and ranges to Prefix Lists, which can then be applied to NetBox instances to control which source IPs your instanc...<br/><img src="https://i3.ytimg.com/vi/nPwL7ve513g/hqdefault.jpg" width=160/>
 
-- [Working with NetBox Cloud Database Backups](https://www.youtube.com/watch?v=1YnQhsC6KFQ)<br>Within the NetBox Labs Console you can access the backups of your NetBox Cloud database, and are able to perform the following actions:
+- [NetBox Heroes Episode 10 - Wikimedia Foundation - Riccardo Caccioli](https://www.youtube.com/watch?v=Jb0NCMagNnc)<br>Netbox Heroes is a podcast inspired by the Netbox and network automation communities. In Episode 10, Kris Beevers, CEO of Netbox Labs, is joined by Riccardo Coccioli, Staff Site Reliability Engineer a...<br/><img src="https://i3.ytimg.com/vi/Jb0NCMagNnc/hqdefault.jpg" width=160/>
 
-- View a list of all available database backups
-- Take an 'On D...<br/><img src="https://i2.ytimg.com/vi/1YnQhsC6KFQ/hqdefault.jpg" width=160/>
+- [NetBox Heroes Episode 9 - Wikimedia Foundation - Cathal Mooney and Arzhel Younsi](https://www.youtube.com/watch?v=ft0Els1mCoU)<br>Netbox Heroes is a podcast inspired by the Netbox and network automation communities. In Episode 9, Kris Beevers, CEO of Netbox Labs, is joined by Cathal Mooney and Arzhel Younsi at Wikimedia, to disc...<br/><img src="https://i3.ytimg.com/vi/ft0Els1mCoU/hqdefault.jpg" width=160/>
 
-- [NetBox Heroes Episode 8: Garrett Nowak - 11:11 Systems](https://www.youtube.com/watch?v=RHfJJpNADu4)<br>In this episode of NetBox Heroes, Host Kris Beevers discusses the importance of mentorship, including team culture as a part of onboarding, and making mistakes, with Garret Nowak, senior director of n...<br/><img src="https://i3.ytimg.com/vi/RHfJJpNADu4/hqdefault.jpg" width=160/>
+- [Network Discovery,  Onboarding & Reconciliation with Slurp'it and NetBox Labs](https://www.youtube.com/watch?v=EIV_50g1f4Q)<br>The new Slurp’it plugin for NetBox seamlessly syncs all discovered data with your NetBox system. Watch this webinar to learn how you can effortlessly onboard devices, map inventory data, and reconcile...<br/><img src="https://i2.ytimg.com/vi/EIV_50g1f4Q/hqdefault.jpg" width=160/>
 
 
 ## Get involved

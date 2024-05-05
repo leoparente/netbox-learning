@@ -7,7 +7,7 @@
 
 ### Getting Started with Network Test Automation: NetBox + pyATS + Genie
 
-[README.md](netbox-pyats/README.md)
+[README.md](netbox-pyats-webinar/README.md)
 
 Learn how to get started with network test automation using NetBox, pyATS and Genie. 
 

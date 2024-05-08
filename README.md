@@ -49,11 +49,11 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 📝 Latest blog articles
 
 
+- [Announcing NetBox 4.0](https://netboxlabs.com/blog/announcing-netbox-4-0/) by Jeff Gehlbach.
 - [Announcing the NetBox Labs Resource Center](https://netboxlabs.com/blog/netbox-labs-announces-resource-center/) by Richard Boucher.
 - [The State of Network Automation in 2024](https://netboxlabs.com/blog/the-state-of-network-automation-in-2024/) by Kris Beevers.
 - [NetBox Labs Adds Dozens of Enterprise Customers, Including Seven Fortune 500 Organizations, and Celebrates Massive NetBox Innovation and Community Growth In First Year](https://netboxlabs.com/news/netbox-labs-customer-product-community-momentum/) by Kiley Nichols.
 - [Navigating Network Automation with NetBox – The Design Stage](https://netboxlabs.com/blog/navigating-network-automation-with-netbox-the-design-stage/) by Mark Coleman.
-- [Introducing Diode: Streamlining Data Ingestion in NetBox](https://netboxlabs.com/blog/introducing-diode-streamlining-data-ingestion-in-netbox/) by Richard Boucher.
 
 
 ## Youtube videos

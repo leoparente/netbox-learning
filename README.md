@@ -39,21 +39,21 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 🚛 NetBox OSS releases
 
 
-- [v4.0.1 - 2024-05-09](https://github.com/netbox-community/netbox/releases/tag/v4.0.1) 🌟
+- [v4.0.2 - 2024-05-14](https://github.com/netbox-community/netbox/releases/tag/v4.0.2) 🌟
+- [v4.0.1 - 2024-05-09](https://github.com/netbox-community/netbox/releases/tag/v4.0.1)
 - [v4.0.0 - 2024-05-06](https://github.com/netbox-community/netbox/releases/tag/v4.0.0)
 - [v3.7.8 - 2024-05-06](https://github.com/netbox-community/netbox/releases/tag/v3.7.8)
 - [v3.7.7 - 2024-05-01](https://github.com/netbox-community/netbox/releases/tag/v3.7.7)
-- [v4.0-beta2 - 2024-04-22](https://github.com/netbox-community/netbox/releases/tag/v4.0-beta2)
 
 
 ## 📝 Latest blog articles
 
 
+- [NetBox v4.0.2 Released](https://netboxlabs.com/blog/netbox-v4-0-2-released/) by Jeff Gehlbach.
+- [Revolutionizing NetSecOps: NetBox Event Streams and SIEM Integration](https://netboxlabs.com/blog/revolutionizing-netsecops-netbox-event-streams-and-siem-integration/) by Rich Bibby.
+- [Navigating Network Automation with NetBox – The Build and Deploy Stages](https://netboxlabs.com/blog/network-automation-with-netbox-build-and-deploy/) by Mark Coleman.
+- [The 2024 NetBox Community Survey is Open!](https://netboxlabs.com/blog/2024-netbox-community-survey/) by Jeff Gehlbach.
 - [Announcing NetBox 4.0](https://netboxlabs.com/blog/announcing-netbox-4-0/) by Jeff Gehlbach.
-- [Announcing the NetBox Labs Resource Center](https://netboxlabs.com/blog/netbox-labs-announces-resource-center/) by Richard Boucher.
-- [The State of Network Automation in 2024](https://netboxlabs.com/blog/the-state-of-network-automation-in-2024/) by Kris Beevers.
-- [NetBox Labs Adds Dozens of Enterprise Customers, Including Seven Fortune 500 Organizations, and Celebrates Massive NetBox Innovation and Community Growth In First Year](https://netboxlabs.com/news/netbox-labs-customer-product-community-momentum/) by Kiley Nichols.
-- [Navigating Network Automation with NetBox – The Design Stage](https://netboxlabs.com/blog/navigating-network-automation-with-netbox-the-design-stage/) by Mark Coleman.
 
 
 ## Youtube videos

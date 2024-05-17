@@ -49,11 +49,11 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 📝 Latest blog articles
 
 
+- [NetBox Labs and Lightyear Partner to Ease Network Connectivity Management](https://netboxlabs.com/blog/netbox-labs-and-lightyear-partner-to-ease-network-connectivity-management/) by Salil Jani.
 - [NetBox v4.0.2 Released](https://netboxlabs.com/blog/netbox-v4-0-2-released/) by Jeff Gehlbach.
 - [Revolutionizing NetSecOps: NetBox Event Streams and SIEM Integration](https://netboxlabs.com/blog/revolutionizing-netsecops-netbox-event-streams-and-siem-integration/) by Rich Bibby.
 - [Navigating Network Automation with NetBox – The Build and Deploy Stages](https://netboxlabs.com/blog/network-automation-with-netbox-build-and-deploy/) by Mark Coleman.
 - [The 2024 NetBox Community Survey is Open!](https://netboxlabs.com/blog/2024-netbox-community-survey/) by Jeff Gehlbach.
-- [Announcing NetBox 4.0](https://netboxlabs.com/blog/announcing-netbox-4-0/) by Jeff Gehlbach.
 
 
 ## Youtube videos

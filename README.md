@@ -61,6 +61,10 @@ This webinar shows you how to get started on your Network Automation journey wit
 
 
 
+- [NetBox Automation Heroes: Proactive and Reactive configuration assurance with NetBox and Netpicker](https://www.youtube.com/watch?v=sEyKYKWH9oY)<br>NetBox Automation Heroes is a video series inspired by the Netbox and network automation communities.
+
+In Episode 2, Mark Coleman, Chief Evangelist of NetBox Labs, is joined by Otto Coster, Lead Softw...<br/><img src="https://i4.ytimg.com/vi/sEyKYKWH9oY/hqdefault.jpg" width=160/>
+
 - [NetBox Automation Heroes: Taking the Luck Out of Design & Operations with NetBox, ContainerLab & NRX](https://www.youtube.com/watch?v=xemyVQbaWq4)<br>NetBox Automation Heroes is a video series inspired by the Netbox and network automation communities. 
 
 In Episode 1, Mark Coleman, Chief Evangelist of NetBox Labs, is joined by Roman Dodin, Product L...<br/><img src="https://i1.ytimg.com/vi/xemyVQbaWq4/hqdefault.jpg" width=160/>
@@ -70,8 +74,6 @@ In Episode 1, Mark Coleman, Chief Evangelist of NetBox Labs, is joined by Roman 
 - [NetBox Heroes Episode 10 - Wikimedia Foundation - Riccardo Caccioli](https://www.youtube.com/watch?v=Jb0NCMagNnc)<br>Netbox Heroes is a podcast inspired by the Netbox and network automation communities. In Episode 10, Kris Beevers, CEO of Netbox Labs, is joined by Riccardo Coccioli, Staff Site Reliability Engineer a...<br/><img src="https://i3.ytimg.com/vi/Jb0NCMagNnc/hqdefault.jpg" width=160/>
 
 - [NetBox Heroes Episode 9 - Wikimedia Foundation - Cathal Mooney and Arzhel Younsi](https://www.youtube.com/watch?v=ft0Els1mCoU)<br>Netbox Heroes is a podcast inspired by the Netbox and network automation communities. In Episode 9, Kris Beevers, CEO of Netbox Labs, is joined by Cathal Mooney and Arzhel Younsi at Wikimedia, to disc...<br/><img src="https://i3.ytimg.com/vi/ft0Els1mCoU/hqdefault.jpg" width=160/>
-
-- [Network Discovery,  Onboarding & Reconciliation with Slurp'it and NetBox Labs](https://www.youtube.com/watch?v=EIV_50g1f4Q)<br>The new Slurp’it plugin for NetBox seamlessly syncs all discovered data with your NetBox system. Watch this webinar to learn how you can effortlessly onboard devices, map inventory data, and reconcile...<br/><img src="https://i2.ytimg.com/vi/EIV_50g1f4Q/hqdefault.jpg" width=160/>
 
 
 ## Get involved

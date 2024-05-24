@@ -8,11 +8,13 @@
     netbox_token: "{{ lookup('ansible.builtin.env', 'NETBOX_TOKEN') }}"
 
   tasks:
+    # query a list of devices
     - name: Obtain list of devices from NetBox
       debug:
         msg: >
-          "Device {{ item.value.display_name }} (ID: {{ item.key }}) was
-           manufactured by {{ item.value.device_type.manufacturer.name }}"
+          "Device {{ item.value.name }} (ID: {{ item.key }}) was
+          manufactured by {{ item.value.device_type.manufacturer.name }}"
       loop: "{{ query('netbox.netbox.nb_lookup', 'devices',
                       api_endpoint=netbox_url,
+                      api_filter='site=cisco-devnet',
                       token=netbox_token) }}"

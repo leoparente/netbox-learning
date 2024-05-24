@@ -1,0 +1,18 @@
+---
+- name: Query devices from NetBox and display information
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    netbox_url: "{{ lookup('ansible.builtin.env', 'NETBOX_API') }}"
+    netbox_token: "{{ lookup('ansible.builtin.env', 'NETBOX_TOKEN') }}"
+
+  tasks:
+    - name: Obtain list of devices from NetBox
+      debug:
+        msg: >
+          "Device {{ item.value.display_name }} (ID: {{ item.key }}) was
+           manufactured by {{ item.value.device_type.manufacturer.name }}"
+      loop: "{{ query('netbox.netbox.nb_lookup', 'devices',
+                      api_endpoint=netbox_url,
+                      token=netbox_token) }}"

@@ -49,11 +49,11 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 📝 Latest blog articles
 
 
+- [Navigating Network Automation with NetBox – The Operate Stage](https://netboxlabs.com/blog/navigating-network-automation-with-netbox-the-operate-stage/) by Mark Coleman.
+- [NetBox Labs and Kentik Team Up to Enhance Operational Efficiency with Integrated NetOps Workflows](https://netboxlabs.com/blog/netbox-labs-kentik-partnership/) by Salil Jani.
+- [Announcing Private Preview of Diode, a New NetBox Ingestion Service](https://netboxlabs.com/blog/announcing-private-preview-of-diode/) by Richard Boucher.
 - [NetBox Labs Partners with Stardust Systems to Deliver Multi-Vendor Network Observability with NetBox & SuzieQ](https://netboxlabs.com/blog/netbox-labs-stardust-systems-network-observability-partnership/) by Salil Jani.
 - [Security and Convenience are Always in Focus in the NetBox Cloud Platform](https://netboxlabs.com/blog/security-and-convenience-are-always-in-focus-in-the-netbox-cloud-platform/) by Rich Bibby.
-- [NetBox Labs and Lightyear Partner to Ease Network Connectivity Management](https://netboxlabs.com/blog/netbox-labs-and-lightyear-partner-to-ease-network-connectivity-management/) by Salil Jani.
-- [NetBox v4.0.2 Released](https://netboxlabs.com/blog/netbox-v4-0-2-released/) by Jeff Gehlbach.
-- [Revolutionizing NetSecOps: NetBox Event Streams and SIEM Integration](https://netboxlabs.com/blog/revolutionizing-netsecops-netbox-event-streams-and-siem-integration/) by Rich Bibby.
 
 
 ## Youtube videos

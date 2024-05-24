@@ -13,14 +13,7 @@
     set_fact:
       device_data: "{{ query('netbox.netbox.nb_lookup', 'devices', api_endpoint=netbox_url, token=netbox_token ) }}"
 
-  - name: Generate export template
-    set_fact:
-      export_template: |
-        device name | serial number
-        {% for device in device_data %}
-         {{ '%-12s' | format(device.value.name) }} {{ '%-10s' | format(device.value.serial) }}
-        {% endfor %}
-
-  - name: Print export template to console
+  - name: Print device name and serial number
     debug:
-      var: export_template
+      msg: "{{ item.value.name }} has serial number {{ item.value.serial }}"
+    loop: "{{ device_data }}"

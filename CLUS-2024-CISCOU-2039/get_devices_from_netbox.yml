@@ -1,5 +1,5 @@
 ---
-- name: Query devices from NetBox and display information
+- name: Query devices from NetBox and Generate Export Template
   hosts: localhost
   gather_facts: no
 
@@ -8,13 +8,19 @@
     netbox_token: "{{ lookup('ansible.builtin.env', 'NETBOX_TOKEN') }}"
 
   tasks:
-    # query a list of devices
-    - name: Obtain list of devices from NetBox
-      debug:
-        msg: >
-          "Device {{ item.value.name }} (ID: {{ item.key }}) was
-          manufactured by {{ item.value.device_type.manufacturer.name }}"
-      loop: "{{ query('netbox.netbox.nb_lookup', 'devices',
-                      api_endpoint=netbox_url,
-                      api_filter='site=cisco-devnet',
-                      token=netbox_token) }}"
+
+  - name: Get device data from Netbox
+    set_fact:
+      device_data: "{{ query('netbox.netbox.nb_lookup', 'devices', api_endpoint=netbox_url, token=netbox_token ) }}"
+
+  - name: Generate export template
+    set_fact:
+      export_template: |
+        device name | serial number
+        {% for device in device_data %}
+         {{ '%-12s' | format(device.value.name) }} {{ '%-10s' | format(device.value.serial) }}
+        {% endfor %}
+
+  - name: Print export template to console
+    debug:
+      var: export_template

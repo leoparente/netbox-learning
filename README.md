@@ -51,7 +51,7 @@ This webinar shows you how to get started on your Network Automation journey wit
 
 - [Navigating Network Automation with NetBox – The Operate Stage](https://netboxlabs.com/blog/navigating-network-automation-with-netbox-the-operate-stage/) by Mark Coleman.
 - [NetBox Labs and Kentik Team Up to Enhance Operational Efficiency with Integrated NetOps Workflows](https://netboxlabs.com/blog/netbox-labs-kentik-partnership/) by Salil Jani.
-- [Announcing Private Preview of Diode, a New NetBox Ingestion Service](https://netboxlabs.com/blog/announcing-private-preview-of-diode/) by Richard Boucher.
+- [Announcing Private Preview of Diode, a New NetBox Ingestion Service](https://netboxlabs.com/featured/announcing-private-preview-of-diode/) by Richard Boucher.
 - [NetBox Labs Partners with Stardust Systems to Deliver Multi-Vendor Network Observability with NetBox & SuzieQ](https://netboxlabs.com/blog/netbox-labs-stardust-systems-network-observability-partnership/) by Salil Jani.
 - [Security and Convenience are Always in Focus in the NetBox Cloud Platform](https://netboxlabs.com/blog/security-and-convenience-are-always-in-focus-in-the-netbox-cloud-platform/) by Rich Bibby.
 
@@ -60,6 +60,12 @@ This webinar shows you how to get started on your Network Automation journey wit
 <img src="images/youtube.jpeg" align="right" width="96" />
 
 
+
+- [Webinar  Network Discovery, Assurance & Compliance Validation with Forward Networks and NetBox Labs](https://www.youtube.com/watch?v=TSX14uke1NE)<br>Join this webinar to learn how Forward Networks and NetBox Labs are lowering the barrier to network automation adoption.
+
+The new integration between Forward Networks and NetBox enables users to:
+
+- E...<br/><img src="https://i1.ytimg.com/vi/TSX14uke1NE/hqdefault.jpg" width=160/>
 
 - [NetBox Automation Heroes: Proactive and Reactive configuration assurance with NetBox and Netpicker](https://www.youtube.com/watch?v=sEyKYKWH9oY)<br>NetBox Automation Heroes is a video series inspired by the Netbox and network automation communities.
 
@@ -72,8 +78,6 @@ In Episode 1, Mark Coleman, Chief Evangelist of NetBox Labs, is joined by Roman 
 - [Securing NetBox Cloud with Prefix Lists](https://www.youtube.com/watch?v=nPwL7ve513g)<br>You can secure access to your NetBox Cloud instance by adding IPv4 and IPv6 addresses and ranges to Prefix Lists, which can then be applied to NetBox instances to control which source IPs your instanc...<br/><img src="https://i3.ytimg.com/vi/nPwL7ve513g/hqdefault.jpg" width=160/>
 
 - [NetBox Heroes Episode 10 - Wikimedia Foundation - Riccardo Caccioli](https://www.youtube.com/watch?v=Jb0NCMagNnc)<br>Netbox Heroes is a podcast inspired by the Netbox and network automation communities. In Episode 10, Kris Beevers, CEO of Netbox Labs, is joined by Riccardo Coccioli, Staff Site Reliability Engineer a...<br/><img src="https://i3.ytimg.com/vi/Jb0NCMagNnc/hqdefault.jpg" width=160/>
-
-- [NetBox Heroes Episode 9 - Wikimedia Foundation - Cathal Mooney and Arzhel Younsi](https://www.youtube.com/watch?v=ft0Els1mCoU)<br>Netbox Heroes is a podcast inspired by the Netbox and network automation communities. In Episode 9, Kris Beevers, CEO of Netbox Labs, is joined by Cathal Mooney and Arzhel Younsi at Wikimedia, to disc...<br/><img src="https://i3.ytimg.com/vi/ft0Els1mCoU/hqdefault.jpg" width=160/>
 
 
 ## Get involved

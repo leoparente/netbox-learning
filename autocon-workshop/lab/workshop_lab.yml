@@ -1,0 +1,13 @@
+name: autocon_workshop
+
+topology:
+  nodes:
+    fiber:
+      kind: srl
+      image: ghcr.io/nokia/srlinux
+    plane:
+      kind: srl
+      image: ghcr.io/nokia/srlinux
+
+  links:
+    - endpoints: ["fiber:e1-1", "plane:e1-1"]

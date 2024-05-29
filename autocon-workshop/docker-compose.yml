@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  netbox-napalm:
+    build: .
+    environment:
+      - NETBOX_URL=https://mark.cloud.netboxapp.com/
+      - NETBOX_TOKEN=7a1dd55700fb60864c96ba573acb0760d4752b72
+      - NAPALM_USERNAME=admin
+      - NAPALM_PASSWORD=admin
+    command: ["fiber", "plane"]
+    volumes:
+      - ./configs:/configs

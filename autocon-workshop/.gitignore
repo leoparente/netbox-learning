@@ -1,2 +1,4 @@
 *.bak
 clab-*/
+venv/
+configs/

@@ -1,0 +1,294 @@
+
+    interface ethernet-1/1 {
+        description Sample_interface_config
+        admin-state enable
+        subinterface 1 {
+            admin-state enable
+            ipv4 {
+                admin-state enable
+                address 192.168.20.17/24 {
+                }
+            }
+        }
+    }
+    interface mgmt0 {
+        admin-state enable
+        subinterface 0 {
+            admin-state enable
+            ip-mtu 1500
+            ipv4 {
+                admin-state enable
+                dhcp-client {
+                }
+            }
+            ipv6 {
+                admin-state enable
+                dhcp-client {
+                }
+            }
+        }
+    }
+    system {
+        aaa {
+            authentication {
+                idle-timeout 7200
+                authentication-method [
+                    local
+                ]
+                linuxadmin-user {
+                    password $6$8eqDzvnq78atu1aV$pNW47HSjSHStQe8d5UQkxsPjM9Dpn8ivu8Cy605mRaPuOO420o2mKmCm2s.T3/nqaMntGtyNQnDh4WvwAdjKF.
+                }
+            }
+            server-group local {
+                type local
+            }
+        }
+        lldp {
+            admin-state enable
+        }
+        gnmi-server {
+            admin-state enable
+            rate-limit 65000
+            trace-options [
+                request
+                response
+                common
+            ]
+            network-instance mgmt {
+                admin-state enable
+                use-authentication true
+                tls-profile clab-profile
+                port 57400
+                services [
+                    gnmi
+                ]
+            }
+            unix-socket {
+                admin-state enable
+                services [
+                    gnmi
+                    gnoi
+                ]
+            }
+        }
+        tls {
+            server-profile clab-profile {
+                key $aes1$ATAhTe/9xMtfmW8=$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
+                certificate "-----BEGIN CERTIFICATE-----
+MIIDyjCCArKgAwIBAgICBnowDQYJKoZIhvcNAQELBQAwVDELMAkGA1UEBhMCVVMx
+CTAHBgNVBAcTADEVMBMGA1UEChMMY29udGFpbmVybGFiMQkwBwYDVQQLEwAxGDAW
+BgNVBAMTD3dvcmtzaG9wIGxhYiBDQTAeFw0yNDA1MjcxMzQwMTRaFw0yNTA1Mjcx
+MzQwMTRaMFYxCzAJBgNVBAYTAlVTMQkwBwYDVQQHEwAxFTATBgNVBAoTDGNvbnRh
+aW5lcmxhYjEJMAcGA1UECxMAMRowGAYDVQQDExFwbGFuZS53b3Jrc2hvcC5pbzCC
+ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJW+B+PAzFzPA0LB+X0yhm23
+88+IQwD9QAGkF/xBZBzxnK0qMd+JkJugYc0NuvqpV5pn/8A/Ow+Y24uq3BPq4o60
+AFDiIOEk6Exzp59Vvgh0nVLo4+t/rAUXQZpVGJDMl2hnkiypZu6WOZri/pFHgyRU
+I3XT4LhsV5W/oj5bFFekz1aGm5w4Bk4m0OMd3LSBkIheoxKj01nvlIcw06QvJFly
+bCURsUu80TLg/32desNysPiFwZ3tv7dOaCGiuqLLuKqpEx610rjcaDs2igZ3Ng/b
+MGW+bt2fUIXG5USiKITXR1NfxvA5PY/nkGiCNmu6QhcQZFgn/mJKqmwbJmYJuRsC
+AwEAAaOBozCBoDAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwIG
+CCsGAQUFBwMBMA4GA1UdDgQHBAUBAgMEBjAfBgNVHSMEGDAWgBToXHdXsGCrlh7L
+huhl3UajxJ0JJjA+BgNVHREENzA1ggVwbGFuZYITY2xhYi13b3Jrc2hvcC1wbGFu
+ZYIRcGxhbmUud29ya3Nob3AuaW+HBMCoEBEwDQYJKoZIhvcNAQELBQADggEBADL1
+8ESS4WYuCtGGQEdDNGMokdb2PTBLxAUpV4/mNfWcDui6oYFJpAR60bRft/qKG8Kq
+/Qx9aVmLyvnYaAZ9aT6jzoWa4JfhocLk4Akra0mffpe0+MPqXoq1GOqimWpyOl02
+nvkm5A1o9sauYoU+3xoRyZiahl8GpH7fxhoFkSblcswXspYAG0m1f2BBtgR+2EtQ
+Pa0Lkl0oG3F5E3KY840AKQ1vXg5HPW9ydv3JknG2IhNLYRnn73B9Nei02T8hv4kR
+eYIwBuVeMABXP+PPP8VkxELxi7/tJcEFbBhajm8FA3iOdH4I9/XanffeBao55JN4
+zF/YpeecVNVLqyEds1M=
+-----END CERTIFICATE-----
+"
+                authenticate-client false
+            }
+        }
+        json-rpc-server {
+            admin-state enable
+            network-instance mgmt {
+                http {
+                    admin-state enable
+                }
+                https {
+                    admin-state enable
+                    tls-profile clab-profile
+                }
+            }
+        }
+        snmp {
+            community $aes1$AWAbcoswQzBUxW8=$EYL/sgxcLNV+XwyJIhTgmQ==
+            network-instance mgmt {
+                admin-state enable
+            }
+        }
+        ssh-server {
+            network-instance mgmt {
+                admin-state enable
+            }
+        }
+        banner {
+            login-banner "................................................................
+:                  Welcome to Nokia SR Linux!                  :
+:              Open Network OS for the NetOps era.             :
+:                                                              :
+:    This is a freely distributed official container image.    :
+:                      Use it - Share it                       :
+:                                                              :
+: Get started: https://learn.srlinux.dev                       :
+: Container:   https://go.srlinux.dev/container-image          :
+: Docs:        https://doc.srlinux.dev/23-10                   :
+: Rel. notes:  https://doc.srlinux.dev/rn23-10-3               :
+: YANG:        https://yang.srlinux.dev/release/v23.10.3       :
+: Discord:     https://go.srlinux.dev/discord                  :
+: Contact:     https://go.srlinux.dev/contact-sales            :
+................................................................
+"
+        }
+        logging {
+            buffer messages {
+                rotate 3
+                size 10000000
+                facility local6 {
+                    priority {
+                        match-above informational
+                    }
+                }
+            }
+            buffer system {
+                facility auth {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility cron {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility daemon {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility ftp {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility kern {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility lpr {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility mail {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility news {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility syslog {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility user {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility uucp {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility local0 {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility local1 {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility local2 {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility local3 {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility local4 {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility local5 {
+                    priority {
+                        match-above warning
+                    }
+                }
+                facility local7 {
+                    priority {
+                        match-above warning
+                    }
+                }
+            }
+            file messages {
+                rotate 3
+                size 10000000
+                facility local6 {
+                    priority {
+                        match-above warning
+                    }
+                }
+            }
+        }
+    }
+    network-instance default {
+        type ip-vrf
+        admin-state enable
+        description "Sample network-instance"
+        interface ethernet-1/1.1 {
+        }
+        protocols {
+            ospf {
+                instance default {
+                    admin-state enable
+                    version ospf-v2
+                    router-id 1.1.1.1
+                    area 0.0.0.1 {
+                        interface ethernet-1/1.1 {
+                            interface-type point-to-point
+                        }
+                    }
+                }
+            }
+        }
+    }
+    network-instance mgmt {
+        type ip-vrf
+        admin-state enable
+        description "Management network instance"
+        interface mgmt0.0 {
+        }
+        protocols {
+            linux {
+                import-routes true
+                export-routes true
+                export-neighbors true
+            }
+        }
+    }
+
+--{ + running }--[  ]--

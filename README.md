@@ -49,11 +49,11 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 📝 Latest blog articles
 
 
+- [Announcing the NetBox Cloud Free Plan: Getting Started with NetBox is Now Easier Than Ever](https://netboxlabs.com/blog/announcing-the-netbox-cloud-free-plan-getting-started-with-netbox-is-now-easier-than-ever/) by Kris Beevers.
+- [Do You Need a Network Source of Truth for Network Automation? Not At First…](https://netboxlabs.com/blog/do-you-need-a-source-of-truth-for-network-automation-not-at-first/) by Mark Coleman.
 - [Navigating Network Automation with NetBox – The Operate Stage](https://netboxlabs.com/blog/navigating-network-automation-with-netbox-the-operate-stage/) by Mark Coleman.
 - [NetBox Labs and Kentik Team Up to Enhance Operational Efficiency with Integrated NetOps Workflows](https://netboxlabs.com/blog/netbox-labs-kentik-partnership/) by Salil Jani.
 - [Announcing Private Preview of Diode, a New NetBox Ingestion Service](https://netboxlabs.com/featured/announcing-private-preview-of-diode/) by Richard Boucher.
-- [NetBox Labs Partners with Stardust Systems to Deliver Multi-Vendor Network Observability with NetBox & SuzieQ](https://netboxlabs.com/blog/netbox-labs-stardust-systems-network-observability-partnership/) by Salil Jani.
-- [Security and Convenience are Always in Focus in the NetBox Cloud Platform](https://netboxlabs.com/blog/security-and-convenience-are-always-in-focus-in-the-netbox-cloud-platform/) by Rich Bibby.
 
 
 ## Youtube videos

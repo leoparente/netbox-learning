@@ -1,13 +1,20 @@
 name: autocon_workshop
 
+mgmt:
+  network: autocon_workshop            # management network name
+  ipv4-subnet: 192.168.20.0/24         # ipv4 range
+  #ipv6-subnet: 2001:172:100:100::/80  # ipv6 range (optional)
+
 topology:
   nodes:
     fiber:
       kind: srl
       image: ghcr.io/nokia/srlinux
+      mgmt-ipv4: 192.168.20.18
     plane:
       kind: srl
       image: ghcr.io/nokia/srlinux
+      mgmt-ipv4: 192.168.20.17
 
   links:
     - endpoints: ["fiber:e1-1", "plane:e1-1"]

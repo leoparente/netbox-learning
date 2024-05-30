@@ -11,7 +11,7 @@ services:
       - NETBOX_URL=https://mark.cloud.netboxapp.com/
       - NETBOX_TOKEN=7a1dd55700fb60864c96ba573acb0760d4752b72
       - NAPALM_USERNAME=admin
-      - NAPALM_PASSWORD=admin
+      - NAPALM_PASSWORD=NokiaSrl1!
     networks:
       - autocon_workshop  # Ensure it's the correct network name
     command: ["fiber", "plane"]

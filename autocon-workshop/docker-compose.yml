@@ -8,12 +8,12 @@ services:
     volumes:
       - .:/app
     environment:
-      - NETBOX_URL=https://mark.cloud.netboxapp.com/
-      - NETBOX_TOKEN=7a1dd55700fb60864c96ba573acb0760d4752b72
-      - NAPALM_USERNAME=admin
-      - NAPALM_PASSWORD=NokiaSrl1!
+      - NETBOX_URL=https://yournetbox.com/
+      - NETBOX_TOKEN=<NETBOX TOKEN>
+      - NAPALM_USERNAME=admin               # Nokia SR Linux Default
+      - NAPALM_PASSWORD=NokiaSrl1!          # Nokia SR Linux Default
     networks:
-      - autocon_workshop  # Ensure it's the correct network name
+      - autocon_workshop
     command: ["fiber", "plane"]
 
 networks:

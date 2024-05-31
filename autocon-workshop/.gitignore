@@ -1,4 +1,4 @@
 *.bak
 clab-*/
 venv/
-generated_configs/
+configs/

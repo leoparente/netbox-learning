@@ -11,10 +11,12 @@ topology:
       kind: srl
       image: ghcr.io/nokia/srlinux
       mgmt-ipv4: 192.168.20.18
+      startup-config: configs/fiber.txt
     plane:
       kind: srl
       image: ghcr.io/nokia/srlinux
       mgmt-ipv4: 192.168.20.17
+      startup-config: configs/plane.txt
 
   links:
     - endpoints: ["fiber:e1-1", "plane:e1-1"]

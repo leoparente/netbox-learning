@@ -264,7 +264,7 @@ ipam_aggregates:
 
 Use the [Lookup Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_lookup_lookup.html) to query NetBox and return data to drive network automation, such as lists of devices, device configurations, prefixes and IP addresses etc.
 
-In the example playbook [`query_netbox_device_data.yml](query_netbox_device_data.yml) we query the NetBox `devices` API endpoint and then display the output, including a message that displays each device hostname and serial number:
+In the example playbook [`query_netbox_device_data.yml`](query_netbox_device_data.yml) we query the NetBox `devices` API endpoint and then display the output, including a message that displays each device hostname and serial number (if it has one):
 
 ```
 # query_netbox_device_data.yml
@@ -299,5 +299,7 @@ ok: [localhost] =>
 ```
 
 ## References
-- [NetBox Offical Docs](https://docs.netbox.dev/en/stable/)
-- [NetBox Inventory Plugin for Ansible](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html)
+- Collection on [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/netbox/netbox/)
+- Collection on [Ansible Automation Hub](https://console.redhat.com/ansible/automation-hub/repo/published/netbox/netbox/)
+- Docs for [NetBox Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html)
+- Docs for [NetBox Lookup Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_lookup_lookup.html)

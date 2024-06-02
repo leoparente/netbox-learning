@@ -1,3 +1,2 @@
-pynetbox
 ansible
-pytz
+pynetbox

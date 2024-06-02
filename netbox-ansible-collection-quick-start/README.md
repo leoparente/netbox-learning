@@ -1,6 +1,6 @@
 # NetBox Ansible Collection - Quick Start
 
-Ansible playbooks to get started working with the Ansible Collection for Netbox. This repo accompanies the talks given at Cisco Live Las Vegas 2024, by the Netbox Labs and Red Hat Network Automation product teams.
+A short guide to getting started with the Ansible Collection for Netbox. This repo accompanies the talks given at Cisco Live Las Vegas 2024, by the Netbox Labs and Red Hat Network Automation product teams.
 
 ![netbox ansible collection](images/ansible_collection.png)
 
@@ -24,7 +24,7 @@ This Ansible collection consists of a set of modules to define the intended netw
 
 ## Getting Started with the Collection
 
-### Installation and Setup Using the Command Line
+### Installation and Setup
 
 1. Clone the Git repo and change into the `netbox-ansible-collection-quick-start` directory:
     ```
@@ -36,16 +36,25 @@ This Ansible collection consists of a set of modules to define the intended netw
     python3 -m venv ./venv
     source venv/bin/activate
     ```
-3. Install required Python packages. The command below will install the colllection
-    ```
-    pip install -r requirements.txt
-    ```
-4. Set environment variables for the NetBox API token and URL:
+3. Install Python Modules and Ansible
+   ```
+   pip install pytz
+   pip install pynetbox
+   pip install ansible
+   ```
+4. Install the NetBox Ansible Collection.
+
+   Before using this collection, you need to install it with the Ansible Galaxy command-line tool:
+
+   ```
+   ansible-galaxy collection install netbox.netbox
+   ```
+5. Set environment variables for your NetBox API token and URL:
     ```
     export NETBOX_API=<YOUR_NETBOX_URL> (note - must include http:// or https://)
     export NETBOX_TOKEN=<YOUR_NETBOX_API_TOKEN>
     ```
-### NetBox as a Dynamic Inventory Source for Ansible
+## NetBox as a Dynamic Inventory Source for Ansible
 
 The [Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html) for NetBox Ansible collection is used to dynamically generate the inventory from NetBox to be used in the Ansible playbook:
 
@@ -72,15 +81,14 @@ In this case we are grouping the returned hosts by the `device_roles` and `sites
   - sites
 ```
 
-
-To view a graph of the inventory retrieved from NetBox, you can run the `ansible-inventory` command and specify the `netbox_inv.yml` file as the source, followed by `--graph:
+To view a graph of the inventory retrieved from NetBox, you can run the `ansible-inventory` command and use the `-i` flag to specify the `netbox_inv.yml` file as the source, followed by `--graph`:
 
 ```
 ansible-inventory -i netbox_inv.yml --graph
 ```
 
 From the returned output we can see that our NetBox instance has returned the data expected nd we have a few `device_roles` and `sites`:
-
+```
 @all:
   |--@device_roles_access:
   |  |--sw3
@@ -104,88 +112,156 @@ From the returned output we can see that our NetBox instance has returned the da
   |  |--SEC-APP-1
   |  |--SWITCH-1
   |--@ungrouped:
+```
 
 To list all the devices in the inventory, use the same command, but with the `--list` suffix:
 ```
 ansible-inventory -i netbox_inv.yml --list
 ```
 
+The output below shows the inventory data returned for a single device, ans all of this can be used in further playbooks to automate operations against the target device:
 
+```
+"sw1": {
+     "ansible_host": "10.10.20.175",
+     "custom_fields": {
+         "ccc_device_id": "32446e0a-032b-4724-93e9-acbbab47371b",
+         "cisco_catalyst_center": "sandboxdnac.cisco.com"
+     },
+     "device_roles": [
+         "distribution"
+     ],
+     "device_types": [
+         "c9kv-uadp-8p"
+     ],
+     "is_virtual": false,
+     "local_context_data": [
+         null
+     ],
+     "locations": [],
+     "manufacturers": [
+         "cisco"
+     ],
+     "platforms": [
+         "ios-xe"
+     ],
+     "primary_ip4": "10.10.20.175",
+     "regions": [],
+     "serial": "9SB9FYAFA2O",
+     "services": [],
+     "site_groups": [],
+     "sites": [
+         "cisco-devnet"
+     ],
+     "status": {
+         "label": "Active",
+         "value": "active"
+     },
+     "tags": []
+}
+```
 
-1. The Ansible playbooks target hosts based on the `device_roles` as defined in NetBox and pulled from the dynamic inventory. They contain a `set_facts` task to map the values of the `ccc_device_id` and `cisco_catalyst_center` custom fields to the devices, so they can be used in later tasks per inventory device:
+To run a playbook that uses the dynamic inventory, specify the inventory file when you run the playbook:
 
-    ```
-    ---
-    - name: Get Device Details From Cisco Catalyst Center
-      hosts: device_roles_distribution, device_roles_access
-    ```
+```
+ansible-playbook -i netbox_inv.yml <PLAYBOOK NAME>
+```
 
-    ```
-    tasks:
-        - name: Set Custom Fields as Facts for Cisco Catalyst Center host and Device UUID
-        set_fact:
-            cisco_catalyst_center: "{{ hostvars[inventory_hostname].custom_fields['cisco_catalyst_center'] }}"
-            ccc_device_id: "{{ hostvars[inventory_hostname].custom_fields['ccc_device_id'] }}"
-    ```
+To target hosts or groups from the inventory in your playbook, reference the hosts or groups as normal in the playbook:
+```
+---
+- name: Playbook using NetBox Inventory Plugin for Ansible
+  hosts: device_roles_distribution, device_roles_access
+```
 
-    ```
-    - name: Get Device Details
-      uri:
-        url: "https://{{ cisco_catalyst_center }}/dna/intent/api/v1/network-device/{{ ccc_device_id }}"
-        method: GET
-        return_content: yes
-        validate_certs: no
-        headers:
-          Content-Type: "application/json"
-          x-auth-token: "{{ login_response.json['Token'] }}"
-      register: device_details
-      delegate_to: localhost
-    ```
+## Define Intended Network State in NetBox
 
-## Getting Started with the Ansible Playbooks
+Define the intended state of your network in NetBox, by interacting with the NetBox database to define objects and their associated state in the following ways:
 
-1. Clone the Git repo and change into the `netbox-ansible-cisco-cc` directory:
-    ```
-    git clone https://github.com/netboxlabs/netbox-learning.git
-    cd netbox-learning/netbox-ansible-cisco-cc
-    ```
-2. Create and activate Python 3 virtual environment:
-    ```
-    python3 -m venv ./venv
-    source venv/bin/activate
-    ```
-3. Install required Python packages:
-    ```
-    pip install -r requirements.txt
-    ```
-4. Set environment variables for the NetBox API token and URL:
-    ```
-    export NETBOX_API=<YOUR_NETBOX_URL> (note - must include http:// or https://)
-    export NETBOX_TOKEN=<YOUR_NETBOX_API_TOKEN>
-    ```
-5. List the devices and host variables retrieved from NetBox using the dynamic inventory:
-    ```
-    ansible-inventory -i netbox_inv.yml --list
-    ```
-6. Note how the Custom Fields `ccc_device_id` and `cisco_catalyst_center` and their values are retrieved for each device:
-    ```
-    "sw4": {
-        "ansible_host": "10.10.20.178",
-        "custom_fields": {
-            "ccc_device_id": "826bc2f3-bf3f-465b-ad2e-e5701ff7a46c",
-            "cisco_catalyst_center": "sandboxdnac.cisco.com"
-        },
-    ```
-7. Run a playbook making sure to specify the NetBox dynamic inventory with the `-i` flag. For example:
-    ```
-    ansible-playbook -i netbox_inv.yml get_device_details.yml
-    ```
-8. When you have finished working you can deactivate the Python virtual environment:
-    ```
-    deactivate
-    ```
+- Make sure objects exit
+- Update objects if they do exist
+- Remove objects if they do not not exist
+
+For example, to make sure a new aggregate network prefix exists:
+```
+tasks:
+    - name: Create aggregate within NetBox with only required information
+      netbox.netbox.netbox_aggregate:
+        netbox_url: http://netbox.local
+        netbox_token: thisIsMyToken
+        data:
+          prefix: 192.168.0.0/16
+          rir: Test RIR
+        state: present
+```
+
+The example playbook `populate_netbox_ipam.yml` will ensure that the `RFC1918` IPv4 aggregates exist in NetBox, as well as some predefined Prefix and VLAN Roles:
+```
+# populate_netbox_ipam.yml
+
+---
+- name: PLAY 1 - Create RIRs
+  connection: local
+  hosts: localhost
+  gather_facts: False
+
+  roles:
+    - role: create_rirs
+      tags: rirs
+
+- name: PLAY 2 - Create Aggregates
+  connection: local
+  hosts: localhost
+  gather_facts: False
+
+  roles:
+    - role: create_aggregates
+      tags: aggregates
+
+- name: PLAY 3 - Create Prefix and VLAN Roles
+  connection: local
+  hosts: localhost
+  gather_facts: False
+
+  roles:
+    - role: create_prefix_and_vlan_roles
+      tags: prefix_and_roles
+```
+
+The playbook is modularized using `roles`, for example the file `roles/create_aggregates/tasks/main.yml` loops over the list of aggregates defined in the file `roles/create_aggregates/vars/main.yml`:
+```
+# roles/create_aggregates/tasks/main.yml
+
+---
+- name: Create Aggregates within NetBox
+  netbox.netbox.netbox_aggregate:
+    netbox_url: "{{ lookup('ansible.builtin.env', 'NETBOX_API') }}"
+    netbox_token: "{{ lookup('ansible.builtin.env', 'NETBOX_TOKEN') }}"
+    data: "{{ aggregate }}"
+    state: present
+  loop: "{{ ipam_aggregates }}"
+  loop_control:
+    loop_var: aggregate
+    label: "{{ aggregate['prefix']}}"
+```
+
+```
+# roles/create_aggregates/vars/main.yml
+---
+ipam_aggregates:
+
+  - prefix: 10.0.0.0/8
+    rir: RFC 1918
+
+  - prefix: 172.16.0.0/12
+    rir: RFC 1918
+
+  - prefix: 192.168.0.0/16
+    rir: RFC 1918
+```
+
+##
 
 ## References
 - [NetBox Offical Docs](https://docs.netbox.dev/en/stable/)
 - [NetBox Inventory Plugin for Ansible](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html)
-- [Cisco Catalyst Center API Docs](https://developer.cisco.com/docs/dna-center/2-3-7/)

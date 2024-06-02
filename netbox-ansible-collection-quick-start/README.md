@@ -4,9 +4,9 @@ A short guide to getting started with the Ansible Collection for Netbox. This re
 
 ![netbox ansible collection](images/ansible_collection.png)
 
-## Collection Overview
+The collection is available from either [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/netbox/netbox/), or NetBox Labs and Red Hat customers can access the certified collection which is supported by both Red Hat and NetBox Labs, via [Ansible Automation Hub](https://console.redhat.com/ansible/automation-hub/repo/published/netbox/netbox/). This doc is based on the Galaxy installation and shows how to use the collection from the command line, rather than from within Ansible Automation Hub.
 
-The collection is available from either [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/netbox/netbox/), or NetBox Labs and Red Hat customers can access the certified collection which is supported by both Red Hat and NetBox Labs, via [Ansible Automation Hub]. This doc is based on the Galaxy installation and shows how oto run the collection from  the command line, rather than from within Ansible Automation hub.
+## Collection Overview
 
 The NetBox Ansible project provides an Ansible collection for interacting with NetBox, the leading solution for modeling and documenting modern networks. By combining the traditional disciplines of IP address management (IPAM) and datacenter infrastructure management (DCIM) with powerful APIs and extensions, NetBox provides the ideal "source of truth" to power network automation.
 
@@ -56,9 +56,9 @@ This Ansible collection consists of a set of modules to define the intended netw
     ```
 ## NetBox as a Dynamic Inventory Source for Ansible
 
-The [Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html) for NetBox Ansible collection is used to dynamically generate the inventory from NetBox to be used in the Ansible playbook:
+The [Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html) component of the collection is used to dynamically generate the inventory from NetBox to be used in Ansible playbooks.
 
-In the `ansible.cfg` file we are specifying that the inventory should be sourced from the file `netbox_inv.yml`:
+In the example [`ansible.cfg`](ansible.cfg) file we are specifying that the inventory should be sourced from the file `netbox_inv.yml`:
 
  ```
  # ansible.cfg
@@ -69,7 +69,7 @@ In the `ansible.cfg` file we are specifying that the inventory should be sourced
 
 The plugin is highly configurable in terms of defining returned hosts and groupings etc in the inventory, so please consult the [docs](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html).
 
-In this case we are grouping the returned hosts by the `device_roles` and `sites` as defined in the NetBox data model:
+In this case we are grouping the returned hosts by the `device_roles` and `sites` as defined in the NetBox database:
 
 ```
  # netbox_inv.yml
@@ -228,7 +228,7 @@ The example playbook `populate_netbox_ipam.yml` will ensure that the `RFC1918` I
       tags: prefix_and_roles
 ```
 
-The playbook is modularized using `roles`, for example the file `roles/create_aggregates/tasks/main.yml` loops over the list of aggregates defined in the file `roles/create_aggregates/vars/main.yml`:
+The playbook is modularized using `roles`, for example the file [`roles/create_aggregates/tasks/main.yml`](roles/create_aggregates/tasks/main.yml) loops over the list of aggregates defined in the file [`roles/create_aggregates/vars/main.yml`](roles/create_aggregates/vars/main.yml):
 ```
 # roles/create_aggregates/tasks/main.yml
 
@@ -260,7 +260,43 @@ ipam_aggregates:
     rir: RFC 1918
 ```
 
-##
+## Query and Return Elements from NetBox
+
+Use the [Lookup Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_lookup_lookup.html) to query NetBox and return data to drive network automation, such as lists of devices, device configurations, prefixes and IP addresses etc.
+
+In the example playbook [`query_netbox_device_data.yml](query_netbox_device_data.yml) we query the NetBox `devices` API endpoint and then display the output, including a message that displays each device hostname and serial number:
+
+```
+# query_netbox_device_data.yml
+---
+- name: Query devices from NetBox and Display Output
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    netbox_url: "{{ lookup('ansible.builtin.env', 'NETBOX_API') }}"
+    netbox_token: "{{ lookup('ansible.builtin.env', 'NETBOX_TOKEN') }}"
+
+  tasks:
+
+  - name: Get device data from Netbox
+    set_fact:
+      device_data: "{{ query('netbox.netbox.nb_lookup', 'devices', api_endpoint=netbox_url, token=netbox_token ) }}"
+
+  - name: Print device name and serial number
+    debug:
+      msg: "{{ item.value.name }} has serial number {{ item.value.serial }}"
+    loop: "{{ device_data }}"
+    when: item.value.serial | length > 0
+```
+
+```
+ok: [localhost] =>
+
+<output shortened>
+
+  msg: sw1 has serial number 9SB9FYAFA2O
+```
 
 ## References
 - [NetBox Offical Docs](https://docs.netbox.dev/en/stable/)

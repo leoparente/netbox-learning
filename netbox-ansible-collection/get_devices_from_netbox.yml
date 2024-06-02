@@ -1,5 +1,5 @@
 ---
-- name: Query devices from NetBox and Generate Export Template
+- name: Query devices from NetBox and Display Output
   hosts: localhost
   gather_facts: no
 

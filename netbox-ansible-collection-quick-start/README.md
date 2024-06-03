@@ -4,7 +4,7 @@ A short guide to getting started with the Ansible Collection for Netbox. This is
 
 ![netbox ansible collection](images/ansible_collection.png)
 
-The collection is available from either [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/netbox/netbox/), or NetBox Labs and Red Hat customers can access the certified and supported collection, via [Ansible Automation Hub](https://console.redhat.com/ansible/automation-hub/repo/published/netbox/netbox/). This doc is based on the Galaxy installation and shows how to use the collection from the command line, rather than from within Ansible Automation Hub.
+The collection is available from [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/netbox/netbox/), and NetBox Labs and Red Hat customers can access the certified and supported collection, via [Ansible Automation Hub](https://console.redhat.com/ansible/automation-hub/repo/published/netbox/netbox/). This doc is based on the Galaxy installation and shows how to use the collection from the command line, rather than from within Ansible Automation Hub.
 
 ## Collection Overview
 
@@ -264,6 +264,38 @@ ipam_aggregates:
     rir: RFC 1918
 ```
 
+Running the playbook results in the following output:
+
+```
+ansible-playbook populate_netbox_ipam.yml
+```
+```
+
+PLAY [PLAY 1 - Create RIRs] ***********************************************************************************************************************************
+
+TASK [create_rirs : Create RIRs] ******************************************************************************************************************************
+ok: [localhost] => (item=RFC 1918)
+
+PLAY [PLAY 2 - Create Aggregates] *****************************************************************************************************************************
+
+TASK [create_aggregates : Create Aggregates within NetBox] ****************************************************************************************************
+ok: [localhost] => (item=10.0.0.0/8)
+ok: [localhost] => (item=172.16.0.0/12)
+ok: [localhost] => (item=192.168.0.0/16)
+
+PLAY [PLAY 3 - Create Prefix and VLAN Roles] ******************************************************************************************************************
+
+TASK [create_prefix_and_vlan_roles : Create Prefix and VLAN Roles within NetBox] ******************************************************************************
+ok: [localhost] => (item=Branch_Data)
+ok: [localhost] => (item=Branch_Voice)
+ok: [localhost] => (item=Branch_WiFi)
+ok: [localhost] => (item=Guest_WiFi)
+ok: [localhost] => (item=Network_Management)
+ok: [localhost] => (item=Point_to_Point)
+
+PLAY RECAP ****************************************************************************************************************************************************
+localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+```
 ## Use Case 3 - Query and Return Elements from NetBox
 
 Use the [Lookup Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_lookup_lookup.html) to query NetBox and return data to drive network automation, such as lists of devices, device configurations, prefixes and IP addresses etc.

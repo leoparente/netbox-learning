@@ -1,10 +1,10 @@
 # NetBox Ansible Collection - Quick Start
 
-A short guide to getting started with the Ansible Collection for Netbox. This repo accompanies the talks given at Cisco Live Las Vegas 2024, by the Netbox Labs and Red Hat Network Automation product teams.
+A short guide to getting started with the Ansible Collection for Netbox. This is a companion repo to the talks titled **Introducing the NetBox integration with Ansible Automation Platform** given at Cisco Live Las Vegas 2024, by Rich Bibby from Netbox Labs and Dafné Mendoza from Red Hat Ansible. You can find the slide deck [here](NetBox-Integration-with-Ansible-Automation-Platform-CLUS-2024.pdf).
 
 ![netbox ansible collection](images/ansible_collection.png)
 
-The collection is available from either [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/netbox/netbox/), or NetBox Labs and Red Hat customers can access the certified collection which is supported by both Red Hat and NetBox Labs, via [Ansible Automation Hub](https://console.redhat.com/ansible/automation-hub/repo/published/netbox/netbox/). This doc is based on the Galaxy installation and shows how to use the collection from the command line, rather than from within Ansible Automation Hub.
+The collection is available from either [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/netbox/netbox/), or NetBox Labs and Red Hat customers can access the certified and supported collection, via [Ansible Automation Hub](https://console.redhat.com/ansible/automation-hub/repo/published/netbox/netbox/). This doc is based on the Galaxy installation and shows how to use the collection from the command line, rather than from within Ansible Automation Hub.
 
 ## Collection Overview
 
@@ -22,6 +22,10 @@ This Ansible collection consists of a set of modules to define the intended netw
   - pynetbox
 - Ansible 2.15+
 
+**_NOTE:_** This guide assumes you have a working NetBox installation, populated with some device data of your own. The easiest way to do this is to set up a [NetBox Cloud Free Plan](https://netboxlabs.com/free-netbox-cloud/) instance, and you can be up an running in seconds. The NetBox instance used in this example has 2 sites with some devices already added:
+
+![NetBox Sites and Devices](images/Cisco%20Live%20Sites%20and%20Devices.png)
+
 ## Getting Started with the Collection
 
 ### Installation and Setup
@@ -31,7 +35,7 @@ This Ansible collection consists of a set of modules to define the intended netw
     git clone https://github.com/netboxlabs/netbox-learning.git
     cd netbox-learning/netbox-ansible-collection-quick-start
     ```
-2. Create and activate Python 3 virtual environment:
+2. Create and activate a Python 3 virtual environment:
     ```
     python3 -m venv ./venv
     source venv/bin/activate
@@ -49,12 +53,12 @@ This Ansible collection consists of a set of modules to define the intended netw
    ```
    ansible-galaxy collection install netbox.netbox
    ```
-5. Set environment variables for your NetBox API token and URL:
+5. Set environment variables for your NetBox API token and URL of your NetBox instance:
     ```
     export NETBOX_API=<YOUR_NETBOX_URL> (note - must include http:// or https://)
     export NETBOX_TOKEN=<YOUR_NETBOX_API_TOKEN>
     ```
-## NetBox as a Dynamic Inventory Source for Ansible
+## Use Case 1 - NetBox as a Dynamic Inventory Source for Ansible
 
 The [Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html) component of the collection is used to dynamically generate the inventory from NetBox to be used in Ansible playbooks.
 
@@ -87,7 +91,7 @@ To view a graph of the inventory retrieved from NetBox, you can run the `ansible
 ansible-inventory -i netbox_inv.yml --graph
 ```
 
-From the returned output we can see that our NetBox instance has returned the data expected nd we have a few `device_roles` and `sites`:
+From the returned output we can see that our NetBox instance has returned the data expected grouped the devices by `device_roles` and `sites`:
 ```
 @all:
   |--@device_roles_access:
@@ -119,7 +123,7 @@ To list all the devices in the inventory, use the same command, but with the `--
 ansible-inventory -i netbox_inv.yml --list
 ```
 
-The output below shows the inventory data returned for a single device, ans all of this can be used in further playbooks to automate operations against the target device:
+The output below has been shortened to show the inventory data returned for a single device, and all of this can be used in further playbooks to automate operations against the target device:
 
 ```
 "sw1": {
@@ -174,7 +178,7 @@ To target hosts or groups from the inventory in your playbook, reference the hos
   hosts: device_roles_distribution, device_roles_access
 ```
 
-## Define Intended Network State in NetBox
+## Use Case 2 - Define Intended Network State in NetBox
 
 Define the intended state of your network in NetBox, by interacting with the NetBox database to define objects and their associated state in the following ways:
 
@@ -260,7 +264,7 @@ ipam_aggregates:
     rir: RFC 1918
 ```
 
-## Query and Return Elements from NetBox
+## Use Case 3 - Query and Return Elements from NetBox
 
 Use the [Lookup Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_lookup_lookup.html) to query NetBox and return data to drive network automation, such as lists of devices, device configurations, prefixes and IP addresses etc.
 
@@ -296,10 +300,36 @@ In the example playbook [`lookup_site_and_device_data.yml`](lookup_site_and_devi
       msg: "{{ devices | json_query('[*].value.name') }}"
 ```
 
-The playbook run resuts in the following output:
+The playbook run results in the following output:
 
 ```
+ansible-playbook lookup_site_and_device_data.yml
+```
+```
+PLAY [Lookup NetBox Site and Device Data] *********************************************************************************************************************
 
+TASK [Query NetBox for all sites] *****************************************************************************************************************************
+ok: [localhost]
+
+TASK [Print the list of sites] ********************************************************************************************************************************
+ok: [localhost] =>
+  msg:
+  - Cisco DevNet
+  - Meraki Sandbox
+
+TASK [Query NetBox for devices at the Cisco DevNet Site] ******************************************************************************************************
+ok: [localhost]
+
+TASK [Print a list of devices at Cisco DevNet Site] ***********************************************************************************************************
+ok: [localhost] =>
+  msg:
+  - sw1
+  - sw2
+  - sw3
+  - sw4
+
+PLAY RECAP ****************************************************************************************************************************************************
+localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
 ## References

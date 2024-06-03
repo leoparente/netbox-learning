@@ -264,12 +264,12 @@ ipam_aggregates:
 
 Use the [Lookup Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_lookup_lookup.html) to query NetBox and return data to drive network automation, such as lists of devices, device configurations, prefixes and IP addresses etc.
 
-In the example playbook [`query_netbox_device_data.yml`](query_netbox_device_data.yml) we query the NetBox `devices` API endpoint and then display the output, including a message that displays each device hostname and serial number (if it has one):
+In the example playbook [`lookup_site_and_device_data.yml`](lookup_site_and_device_data.yml) we first of all query the NetBox `sites` API endpoint and then print a list of all the sites. Then we query the `devices` API endpoint, filter on the site `cisco-devnet` and print a list of the devices at that site:
 
 ```
-# query_netbox_device_data.yml
+# lookup_site_and_device_data.yml
 ---
-- name: Query devices from NetBox and Display Output
+- name: Lookup NetBox Site and Device Data
   hosts: localhost
   gather_facts: no
 
@@ -279,23 +279,27 @@ In the example playbook [`query_netbox_device_data.yml`](query_netbox_device_dat
 
   tasks:
 
-  - name: Get device data from Netbox
+  - name: "Query NetBox for all sites"
     set_fact:
-      device_data: "{{ query('netbox.netbox.nb_lookup', 'devices', api_endpoint=netbox_url, token=netbox_token ) }}"
+      sites: "{{ query('netbox.netbox.nb_lookup', 'sites', api_endpoint=netbox_url, token=netbox_token) }}"
 
-  - name: Print device name and serial number
+  - name: "Print the list of sites"
     debug:
-      msg: "{{ item.value.name }} has serial number {{ item.value.serial }}"
-    loop: "{{ device_data }}"
-    when: item.value.serial | length > 0
+      msg: "{{ sites | json_query('[*].value.name') }}"
+
+  - name: "Query NetBox for devices at the Cisco DevNet Site"
+    set_fact:
+      devices: "{{ query('netbox.netbox.nb_lookup', 'devices', api_filter='site=cisco-devnet', api_endpoint=netbox_url, token=netbox_token) }}"
+
+  - name: "Print a list of devices at Cisco DevNet Site"
+    debug:
+      msg: "{{ devices | json_query('[*].value.name') }}"
 ```
 
+The playbook run resuts in the following output:
+
 ```
-ok: [localhost] =>
 
-<output shortened>
-
-  msg: sw1 has serial number 9SB9FYAFA2O
 ```
 
 ## References

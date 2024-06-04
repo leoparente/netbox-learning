@@ -2,3 +2,4 @@
 clab-*/
 venv/
 configs/
+.env

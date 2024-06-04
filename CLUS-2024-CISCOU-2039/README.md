@@ -1,6 +1,6 @@
 # Integrating NetBox and Ansible with Catalyst Center and Meraki as part of a modern Network Automation Architecture
 
-A simple NetBox integration that shows how to automate devices managed by Cisco Catalyst Center and Meraki Cloud Controllers with Ansible.
+A simple integration to enable automation of devices managed by Cisco Catalyst Center and Meraki Cloud Controllers with Ansible, using inventory and device data from Netbox.
 
 This solution was presented by Rich Bibby at Cisco Live Las Vegas 2024 in the Cisco U. Theater - **Session ID CISCOU-2039**.
 
@@ -128,6 +128,8 @@ For Meraki devices we don't need to extend the NetBox data model, we can make us
     ```
 
 ## References
+- Collection on [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/netbox/netbox/)
+- Collection on [Ansible Automation Hub](https://console.redhat.com/ansible/automation-hub/repo/published/netbox/netbox/)
+- Docs for [NetBox Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html)
+- Docs for [NetBox Lookup Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_lookup_lookup.html)
 - [NetBox Offical Docs](https://docs.netbox.dev/en/stable/)
-- [NetBox Inventory Plugin for Ansible](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html)
-- [Cisco Catalyst Center API Docs](https://developer.cisco.com/docs/dna-center/2-3-7/)

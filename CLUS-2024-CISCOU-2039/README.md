@@ -1,12 +1,12 @@
-# netbox-ansible-cisco-cc
+# Integrating NetBox and Ansible with Catalyst Center and Meraki as part of a modern Network Automation Architecture
 
-A simple NetBox integration that enables Ansible to automate devices managed by a Cisco Catalyst Center Controller.
+A simple integration to enable automation of devices managed by Cisco Catalyst Center and Meraki Cloud Controllers with Ansible, using inventory and device data from Netbox.
 
-This solution was presented by Rich Bibby at Cisco Live Amsterdam 2024 in the Cisco U. Theater. **Session ID CISCOU-1014 Integrating Cisco Catalyst Center with NetBox as Part of a Modern Network Automation Solution**
-
-[![netbox Cisco CC](https://img.youtube.com/vi/7Qv9OFriTrw/0.jpg)](https://www.youtube.com/watch?v=7Qv9OFriTrw)
+This solution was presented by Rich Bibby at Cisco Live Las Vegas 2024 in the Cisco U. Theater - **Session ID CISCOU-2039**.
 
 ## Integration Overview
+
+### Cisco Catalyst Center
 
 The four main elements of the integration are as follows:
 
@@ -24,7 +24,7 @@ The four main elements of the integration are as follows:
 
     ![device ID](images/ccc_netbox_cf_2.png)
 
-2. Devices managed by the Cisco Catalyst Center are added to NetBox and the device data includes the custom field values: 
+2. Devices managed by the Cisco Catalyst Center are added to NetBox and the device data includes the custom field values:
 
     ![netbox device](images/ccc_netbox_device_details.png)
 
@@ -42,12 +42,12 @@ The four main elements of the integration are as follows:
 
     plugin: netbox.netbox.nb_inventory
     validate_certs: False
-    group_by: 
+    group_by:
      - device_roles
      - sites
     ```
 
-4. The Ansible playbooks target hosts based on the `device_roles` as defined in NetBox and pulled from the dynamic inventory. They contain a `set_facts` task to map the values of the `ccc_device_id` and `cisco_catalyst_center` custom fields to the devices, so they can be used in later tasks per inventory device: 
+4. The Ansible playbooks target hosts based on the `device_roles` as defined in NetBox and pulled from the dynamic inventory. They contain a `set_facts` task to map the values of the `ccc_device_id` and `cisco_catalyst_center` custom fields to the devices, so they can be used in later tasks per inventory device:
 
     ```
     ---
@@ -75,14 +75,20 @@ The four main elements of the integration are as follows:
           x-auth-token: "{{ login_response.json['Token'] }}"
       register: device_details
       delegate_to: localhost
-    ``` 
+    ```
+
+### Cisco Meraki Cloud Dashboard
+
+For Meraki devices we don't need to extend the NetBox data model, we can make use of the `serial mumber` field in the `device` model to map to the Meraki device serial number:
+
+![Meraki Devices](images/meraki-devices.png)
 
 ## Getting Started with the Ansible Playbooks
 
-1. Clone the Git repo and change into the `netbox-ansible-cisco-cc` directory:
+1. Clone the Git repo and change into the `CLUS-2024-CISCOU-2039` directory:
     ```
     git clone https://github.com/netboxlabs/netbox-learning.git
-    cd netbox-learning/netbox-ansible-cisco-cc
+    cd netbox-learning/CLUS-2024-CISCOU-2039
     ```
 2. Create and activate Python 3 virtual environment:
     ```
@@ -93,10 +99,11 @@ The four main elements of the integration are as follows:
     ```
     pip install -r requirements.txt
     ```
-4. Set environment variables for the NetBox API token and URL:
+4. Set environment variables for the NetBox API token and URL, plus the Meraki Cloud Dashboard API Key:
     ```
-    export NETBOX_API=<YOUR_NETBOX_URL> (note - must include http:// or https://) 
+    export NETBOX_API=<YOUR_NETBOX_URL> (note - must include http:// or https://)
     export NETBOX_TOKEN=<YOUR_NETBOX_API_TOKEN>
+    export MERAKI_DASHBOARD_API_KEY=<YOUR_MERAKI_KEY>
     ```
 5. List the devices and host variables retrieved from NetBox using the dynamic inventory:
     ```
@@ -113,7 +120,7 @@ The four main elements of the integration are as follows:
     ```
 7. Run a playbook making sure to specify the NetBox dynamic inventory with the `-i` flag. For example:
     ```
-    ansible-playbook -i netbox_inv.yml get_device_details.yml
+    ansible-playbook -i netbox_inv.yml set_meraki_mgnt_ip.yml
     ```
 8. When you have finished working you can deactivate the Python virtual environment:
     ```
@@ -121,6 +128,8 @@ The four main elements of the integration are as follows:
     ```
 
 ## References
+- Collection on [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/netbox/netbox/)
+- Collection on [Ansible Automation Hub](https://console.redhat.com/ansible/automation-hub/repo/published/netbox/netbox/)
+- Docs for [NetBox Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html)
+- Docs for [NetBox Lookup Plugin](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_lookup_lookup.html)
 - [NetBox Offical Docs](https://docs.netbox.dev/en/stable/)
-- [NetBox Inventory Plugin for Ansible](https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html)
-- [Cisco Catalyst Center API Docs](https://developer.cisco.com/docs/dna-center/2-3-7/)

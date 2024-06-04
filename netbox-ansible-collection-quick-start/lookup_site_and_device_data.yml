@@ -1,0 +1,26 @@
+---
+- name: Lookup NetBox Site and Device Data
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    netbox_url: "{{ lookup('ansible.builtin.env', 'NETBOX_API') }}"
+    netbox_token: "{{ lookup('ansible.builtin.env', 'NETBOX_TOKEN') }}"
+
+  tasks:
+
+  - name: "Query NetBox for all sites"
+    set_fact:
+      sites: "{{ query('netbox.netbox.nb_lookup', 'sites', api_endpoint=netbox_url, token=netbox_token) }}"
+
+  - name: "Print the list of sites"
+    debug:
+      msg: "{{ sites | json_query('[*].value.name') }}"
+
+  - name: "Query NetBox for devices at the Cisco DevNet Site"
+    set_fact:
+      devices: "{{ query('netbox.netbox.nb_lookup', 'devices', api_filter='site=cisco-devnet', api_endpoint=netbox_url, token=netbox_token) }}"
+
+  - name: "Print a list of devices at Cisco DevNet Site"
+    debug:
+      msg: "{{ devices | json_query('[*].value.name') }}"

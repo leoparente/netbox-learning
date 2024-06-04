@@ -1,0 +1,23 @@
+---
+- hosts: SEC-APP-1
+  gather_facts: false
+  tasks:
+
+    - name: Set management IP address
+      cisco.meraki.devices_management_interface:
+        state: present
+        serial: "{{ serial }}"
+        wan1:
+          staticGatewayIp: 192.168.20.1
+          staticIp: "{{ primary_ip4 }}"
+          staticSubnetMask: 255.255.255.0
+          usingStaticIp: true
+
+    - name: Get Device Management Information
+      cisco.meraki.devices_management_interface_info:
+        serial: "{{ serial }}"
+      register: result
+
+    - name: Show Device Management Information
+      ansible.builtin.debug:
+        var: result

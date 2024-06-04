@@ -85,7 +85,7 @@ For Meraki devices we don't need to extend the NetBox data model, we can make us
 
 ## Getting Started with the Ansible Playbooks
 
-1. Clone the Git repo and change into the `netbox-ansible-cisco-cc` directory:
+1. Clone the Git repo and change into the `CLUS-2024-CISCOU-2039` directory:
     ```
     git clone https://github.com/netboxlabs/netbox-learning.git
     cd netbox-learning/CLUS-2024-CISCOU-2039
@@ -99,11 +99,11 @@ For Meraki devices we don't need to extend the NetBox data model, we can make us
     ```
     pip install -r requirements.txt
     ```
-4. Set environment variables for the NetBox API token and URL, plus the Meraki Cloud Dashboard API token:
+4. Set environment variables for the NetBox API token and URL, plus the Meraki Cloud Dashboard API Key:
     ```
     export NETBOX_API=<YOUR_NETBOX_URL> (note - must include http:// or https://)
     export NETBOX_TOKEN=<YOUR_NETBOX_API_TOKEN>
-    export MERAKI_DASHBOARD_API_KEY=<YOUR_MERAKI_TOKEN>
+    export MERAKI_DASHBOARD_API_KEY=<YOUR_MERAKI_KEY>
     ```
 5. List the devices and host variables retrieved from NetBox using the dynamic inventory:
     ```

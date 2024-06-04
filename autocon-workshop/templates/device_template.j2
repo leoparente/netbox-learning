@@ -1,5 +1,6 @@
 {% set ipv4_address = device.primary_ip %}
 {% set primary = "primary" %}
+{% set secondary = "secondary" %}
 
 {% if 'Broadcast' in device.tags.names() %}
     {% set ospf_interface_type = "broadcast" %}

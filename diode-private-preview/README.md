@@ -38,8 +38,7 @@ export DIODE_API_KEY=<provided during Diode private preview program onboarding>
 All scripts have an optional flags:
 
 ```
---target TARGET  the target address of the Diode server (without http:// or https://)
---tls_verify     enable TLS verification (default: True)
+--target TARGET  the target address of the Diode server (default: grpc://localhost:8081)
 --apply          apply the changes (default: False)
 ```
 

@@ -3,11 +3,7 @@ import sys
 
 import yaml
 from netboxlabs.diode.sdk import DiodeClient
-from netboxlabs.diode.sdk.ingester import (
-    Device,
-    Entity,
-    Prefix
-)
+from netboxlabs.diode.sdk.ingester import Device, Entity, Prefix
 
 
 def parse_clab_config(config_file: str) -> list[Entity]:
@@ -29,48 +25,58 @@ def parse_clab_config(config_file: str) -> list[Entity]:
     """
 
     entities = []
-    with open(config_file, 'r') as file:
+    with open(config_file, "r") as file:
         data = yaml.safe_load(file)
 
         # Set the site name
-        name = data.get('name', "undefined") or "undefined"
-        site_name = f'Containerlab: {name}'
+        name = data.get("name", "undefined") or "undefined"
+        site_name = f"Containerlab: {name}"
 
         # Parse mgmt network data, if present
         if data.get("mgmt"):
             mgmt = data.get("mgmt")
-            entities.append(Entity(
-                prefix=Prefix(
-                    prefix=mgmt.get("ipv4-subnet"),
-                    description=mgmt.get("network"),
-                    site=site_name
+            entities.append(
+                Entity(
+                    prefix=Prefix(
+                        prefix=mgmt.get("ipv4-subnet"),
+                        description=mgmt.get("network"),
+                        site=site_name,
+                    )
                 )
-            ))
+            )
 
         # Parse node (device) data, if present
         if data.get("topology"):
             nodes = data.get("topology").get("nodes")
             for node in nodes:
                 node_data = nodes.get(node)
-                entities.append(Entity(
-                    device=Device(
-                        name=node,
-                        device_type=node_data.get('kind'),
-                        manufacturer=node_data.get('kind'),
-                        platform=node_data.get('image'),
-                        site=site_name,
-                        primary_ip4=node_data.get('mgmt-ipv4')
+                entities.append(
+                    Entity(
+                        device=Device(
+                            name=node,
+                            device_type=node_data.get("kind"),
+                            manufacturer=node_data.get("kind"),
+                            platform=node_data.get("image"),
+                            site=site_name,
+                            primary_ip4=node_data.get("mgmt-ipv4"),
+                        )
                     )
-                ))
+                )
 
     return entities
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--target", type=str, default="localhost:8081", help="the target address of the Diode server")
-    parser.add_argument("--tls_verify", action="store_false", default=True, help="enable TLS verification")
-    parser.add_argument("--apply", action="store_true", default=False, help="apply the changes")
+    parser.add_argument(
+        "--target",
+        type=str,
+        default="grpc://localhost:8081",
+        help="the target address of the Diode server",
+    )
+    parser.add_argument(
+        "--apply", action="store_true", default=False, help="apply the changes"
+    )
     args = parser.parse_args()
 
     try:
@@ -84,8 +90,9 @@ def main():
         print(f"INFO: entities to ingest: {entities}")
         sys.exit(0)
 
-    with DiodeClient(target=args.target, app_name="containerlab-config-parser", app_version="0.0.1",
-                     tls_verify=args.tls_verify) as client:
+    with DiodeClient(
+        target=args.target, app_name="containerlab-config-parser", app_version="0.0.1"
+    ) as client:
         response = client.ingest(entities=entities)
         if response.errors:
             print(f"FAIL: response errors: {response.errors}")

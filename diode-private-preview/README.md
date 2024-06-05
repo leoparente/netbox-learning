@@ -6,7 +6,7 @@
 
 Pre-requisites:
 
-* Python >= 3.7
+* Python >= 3.10
 
 1. Create a virtual environment and activate it:
 

@@ -49,11 +49,11 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 📝 Latest blog articles
 
 
-- [NetBox Labs Project Bundles for Partners: Streamlining Network Projects for Our Expert Partners and Their Clients](https://netboxlabs.com/blog/netbox-labs-project-bundles-for-partners-streamlining-network-projects-for-our-expert-partners-and-their-clients/) by Kris Beevers.
+- [How to succeed with Network Automation using NetBox, Slurp’it and Netpicker](https://netboxlabs.com/blog/how-to-succeed-with-network-automation-using-netbox-slurpit-and-netpicker/) by Mark Coleman.
+- [AutoCon1 Recap: My takeaways from what is now THE network automation event](https://netboxlabs.com/blog/autocon1-recap/) by Mark Coleman.
 - [NetBox Labs Announces Project Bundles for Partners to Accelerate Network Projects](https://netboxlabs.com/news/netbox-labs-announces-project-bundles-for-partners-to-accelerate-network-projects/) by Kiley Nichols.
+- [NetBox Labs Project Bundles for Partners: Streamlining Network Projects for Our Expert Partners and Their Clients](https://netboxlabs.com/blog/netbox-labs-project-bundles-for-partners-streamlining-network-projects-for-our-expert-partners-and-their-clients/) by Kris Beevers.
 - [Red Hat Ansible Automation Platform and NetBox: Why the Most Popular Network Automation Pair Is Here to Stay](https://netboxlabs.com/blog/ansible-and-netbox-announce-certified-collection/) by Kris Beevers.
-- [Announcing the NetBox Cloud Free Plan: Getting Started with NetBox is Now Easier Than Ever](https://netboxlabs.com/blog/announcing-the-netbox-cloud-free-plan-getting-started-with-netbox-is-now-easier-than-ever/) by Kris Beevers.
-- [Do You Need a Network Source of Truth for Network Automation? Not At First…](https://netboxlabs.com/blog/do-you-need-a-source-of-truth-for-network-automation-not-at-first/) by Mark Coleman.
 
 
 ## Youtube videos

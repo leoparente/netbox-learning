@@ -1,4 +1,5 @@
 import argparse
+import os
 import sys
 
 from ciscoconfparse2 import CiscoConfParse
@@ -33,7 +34,8 @@ def parse_cisco_config(config_file: str, site: str = "Site A") -> list[Entity]:
                     such as 'hostname' or 'version'.
     """
 
-    parse = CiscoConfParse(config_file, syntax="ios")
+    file_path = os.path.join(os.path.dirname(__file__), config_file)
+    parse = CiscoConfParse(file_path, syntax="ios")
 
     # Extract device name (hostname), end processing if not found
     if parse.find_objects(r"^hostname"):

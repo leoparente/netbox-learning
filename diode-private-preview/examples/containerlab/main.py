@@ -1,4 +1,5 @@
 import argparse
+import os
 import sys
 
 import yaml
@@ -25,7 +26,9 @@ def parse_clab_config(config_file: str) -> list[Entity]:
     """
 
     entities = []
-    with open(config_file, "r") as file:
+    file_path = os.path.join(os.path.dirname(__file__), config_file)
+
+    with open(file_path, "r") as file:
         data = yaml.safe_load(file)
 
         # Set the site name

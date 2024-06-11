@@ -1,5 +1,6 @@
 import argparse
 import csv
+import os
 import sys
 
 from netboxlabs.diode.sdk import DiodeClient
@@ -21,7 +22,9 @@ def main():
 
     entities = []
 
-    with open("inventory.csv", "r") as file:
+    file_path = os.path.join(os.path.dirname(__file__), "inventory.csv")
+
+    with open(file_path, "r") as file:
         reader = csv.reader(file)
         header = next(reader)
 

@@ -35,6 +35,7 @@ def parse_cisco_config(config_file: str, site: str = "Site A") -> list[Entity]:
     """
 
     file_path = os.path.join(os.path.dirname(__file__), config_file)
+
     parse = CiscoConfParse(file_path, syntax="ios")
 
     # Extract device name (hostname), end processing if not found

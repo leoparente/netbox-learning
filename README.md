@@ -61,6 +61,10 @@ This webinar shows you how to get started on your Network Automation journey wit
 
 
 
+- [Network Test Automation on Steroids: NetBox and Netpicker](https://www.youtube.com/watch?v=nybuISX172A)<br>Watch this webinar and learn how to supercharge your network with Automated Testing using NetBox with Netpicker.io and replace your ‘legacy’ config backup tools with a modern and free alternative.
+
+It...<br/><img src="https://i3.ytimg.com/vi/nybuISX172A/hqdefault.jpg" width=160/>
+
 - [Webinar  Network Discovery, Assurance & Compliance Validation with Forward Networks and NetBox Labs](https://www.youtube.com/watch?v=TSX14uke1NE)<br>Join this webinar to learn how Forward Networks and NetBox Labs are lowering the barrier to network automation adoption.
 
 The new integration between Forward Networks and NetBox enables users to:
@@ -76,8 +80,6 @@ In Episode 2, Mark Coleman, Chief Evangelist of NetBox Labs, is joined by Otto C
 In Episode 1, Mark Coleman, Chief Evangelist of NetBox Labs, is joined by Roman Dodin, Product L...<br/><img src="https://i1.ytimg.com/vi/xemyVQbaWq4/hqdefault.jpg" width=160/>
 
 - [Securing NetBox Cloud with Prefix Lists](https://www.youtube.com/watch?v=nPwL7ve513g)<br>You can secure access to your NetBox Cloud instance by adding IPv4 and IPv6 addresses and ranges to Prefix Lists, which can then be applied to NetBox instances to control which source IPs your instanc...<br/><img src="https://i3.ytimg.com/vi/nPwL7ve513g/hqdefault.jpg" width=160/>
-
-- [NetBox Heroes Episode 10 - Wikimedia Foundation - Riccardo Caccioli](https://www.youtube.com/watch?v=Jb0NCMagNnc)<br>Netbox Heroes is a podcast inspired by the Netbox and network automation communities. In Episode 10, Kris Beevers, CEO of Netbox Labs, is joined by Riccardo Coccioli, Staff Site Reliability Engineer a...<br/><img src="https://i3.ytimg.com/vi/Jb0NCMagNnc/hqdefault.jpg" width=160/>
 
 
 ## Get involved

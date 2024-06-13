@@ -49,17 +49,21 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 📝 Latest blog articles
 
 
+- [Announcing General Availability of the ServiceNow CMDB and Workflow Integrations for NetBox Enterprise and NetBox Cloud](https://netboxlabs.com/blog/announcing-general-availability-of-the-servicenow-cmdb-and-workflow-integrations-for-netbox-enterprise-and-netbox-cloud/) by Kris Beevers.
 - [How to succeed with Network Automation using NetBox, Slurp’it and Netpicker](https://netboxlabs.com/blog/how-to-succeed-with-network-automation-using-netbox-slurpit-and-netpicker/) by Mark Coleman.
 - [AutoCon1 Recap: My takeaways from what is now THE network automation event](https://netboxlabs.com/blog/autocon1-recap/) by Mark Coleman.
 - [NetBox Labs Announces Project Bundles for Partners to Accelerate Network Projects](https://netboxlabs.com/news/netbox-labs-announces-project-bundles-for-partners-to-accelerate-network-projects/) by Kiley Nichols.
 - [NetBox Labs Project Bundles for Partners: Streamlining Network Projects for Our Expert Partners and Their Clients](https://netboxlabs.com/blog/netbox-labs-project-bundles-for-partners-streamlining-network-projects-for-our-expert-partners-and-their-clients/) by Kris Beevers.
-- [Red Hat Ansible Automation Platform and NetBox: Why the Most Popular Network Automation Pair Is Here to Stay](https://netboxlabs.com/blog/ansible-and-netbox-announce-certified-collection/) by Kris Beevers.
 
 
 ## Youtube videos
 <img src="images/youtube.jpeg" align="right" width="96" />
 
 
+
+- [ServiceNow ITSM Workflow Integration with NetBox for NetBox Labs Customers](https://www.youtube.com/watch?v=0F47R1gnp90)<br>Watch this demo to learn how to leverage NetBox Enterprise or NetBox Cloud’s data and automation capabilities to enrich ServiceNow ITSM workflows, such as incident and change management, asset managem...<br/><img src="https://i1.ytimg.com/vi/0F47R1gnp90/hqdefault.jpg" width=160/>
+
+- [ServiceNow CMDB NetBox Integration for NetBox Labs Customers](https://www.youtube.com/watch?v=nFSDhfwHcSk)<br>Watch this demo of the bidirectional integration between NetBox Enterprise or NetBox Cloud and ServiceNow’s CMDB, for granularly configured bidirectional sharing and synchronization of network and inf...<br/><img src="https://i3.ytimg.com/vi/nFSDhfwHcSk/hqdefault.jpg" width=160/>
 
 - [Network Test Automation on Steroids: NetBox and Netpicker](https://www.youtube.com/watch?v=nybuISX172A)<br>Watch this webinar and learn how to supercharge your network with Automated Testing using NetBox with Netpicker.io and replace your ‘legacy’ config backup tools with a modern and free alternative.
 
@@ -74,12 +78,6 @@ The new integration between Forward Networks and NetBox enables users to:
 - [NetBox Automation Heroes: Proactive and Reactive configuration assurance with NetBox and Netpicker](https://www.youtube.com/watch?v=sEyKYKWH9oY)<br>NetBox Automation Heroes is a video series inspired by the Netbox and network automation communities.
 
 In Episode 2, Mark Coleman, Chief Evangelist of NetBox Labs, is joined by Otto Coster, Lead Softw...<br/><img src="https://i4.ytimg.com/vi/sEyKYKWH9oY/hqdefault.jpg" width=160/>
-
-- [NetBox Automation Heroes: Taking the Luck Out of Design & Operations with NetBox, ContainerLab & NRX](https://www.youtube.com/watch?v=xemyVQbaWq4)<br>NetBox Automation Heroes is a video series inspired by the Netbox and network automation communities. 
-
-In Episode 1, Mark Coleman, Chief Evangelist of NetBox Labs, is joined by Roman Dodin, Product L...<br/><img src="https://i1.ytimg.com/vi/xemyVQbaWq4/hqdefault.jpg" width=160/>
-
-- [Securing NetBox Cloud with Prefix Lists](https://www.youtube.com/watch?v=nPwL7ve513g)<br>You can secure access to your NetBox Cloud instance by adding IPv4 and IPv6 addresses and ranges to Prefix Lists, which can then be applied to NetBox instances to control which source IPs your instanc...<br/><img src="https://i3.ytimg.com/vi/nPwL7ve513g/hqdefault.jpg" width=160/>
 
 
 ## Get involved

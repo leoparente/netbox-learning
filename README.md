@@ -49,11 +49,11 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 📝 Latest blog articles
 
 
+- [NetBox Reorder-Rack Plugin Author Alex Gittings Claims Second NetBox Labs Plugin Bounty](https://netboxlabs.com/blog/netbox-reorder-rack-plugin-author-alex-gittings-claims-second-netbox-labs-plugin-bounty/) by Jeff Gehlbach.
 - [Announcing General Availability of the ServiceNow CMDB and Workflow Integrations for NetBox Enterprise and NetBox Cloud](https://netboxlabs.com/blog/announcing-general-availability-of-the-servicenow-cmdb-and-workflow-integrations-for-netbox-enterprise-and-netbox-cloud/) by Kris Beevers.
 - [How to succeed with Network Automation using NetBox, Slurp’it and Netpicker](https://netboxlabs.com/blog/how-to-succeed-with-network-automation-using-netbox-slurpit-and-netpicker/) by Mark Coleman.
 - [AutoCon1 Recap: My takeaways from what is now THE network automation event](https://netboxlabs.com/blog/autocon1-recap/) by Mark Coleman.
 - [NetBox Labs Announces Project Bundles for Partners to Accelerate Network Projects](https://netboxlabs.com/news/netbox-labs-announces-project-bundles-for-partners-to-accelerate-network-projects/) by Kiley Nichols.
-- [NetBox Labs Project Bundles for Partners: Streamlining Network Projects for Our Expert Partners and Their Clients](https://netboxlabs.com/blog/netbox-labs-project-bundles-for-partners-streamlining-network-projects-for-our-expert-partners-and-their-clients/) by Kris Beevers.
 
 
 ## Youtube videos

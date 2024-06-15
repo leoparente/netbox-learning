@@ -61,6 +61,12 @@ This webinar shows you how to get started on your Network Automation journey wit
 
 
 
+- [Webinar New Security and Efficiency Enhancements in NetBox Cloud](https://www.youtube.com/watch?v=KOFfNfN2VgY)<br>This insightful webinar covers the latest NetBox Cloud Platform features designed to enhance both the security and efficiency of your network management.
+
+The webinar includes:
+
+A guided tour of the N...<br/><img src="https://i4.ytimg.com/vi/KOFfNfN2VgY/hqdefault.jpg" width=160/>
+
 - [ServiceNow ITSM Workflow Integration with NetBox for NetBox Labs Customers](https://www.youtube.com/watch?v=0F47R1gnp90)<br>Watch this demo to learn how to leverage NetBox Enterprise or NetBox Cloud’s data and automation capabilities to enrich ServiceNow ITSM workflows, such as incident and change management, asset managem...<br/><img src="https://i1.ytimg.com/vi/0F47R1gnp90/hqdefault.jpg" width=160/>
 
 - [ServiceNow CMDB NetBox Integration for NetBox Labs Customers](https://www.youtube.com/watch?v=nFSDhfwHcSk)<br>Watch this demo of the bidirectional integration between NetBox Enterprise or NetBox Cloud and ServiceNow’s CMDB, for granularly configured bidirectional sharing and synchronization of network and inf...<br/><img src="https://i3.ytimg.com/vi/nFSDhfwHcSk/hqdefault.jpg" width=160/>
@@ -74,10 +80,6 @@ It...<br/><img src="https://i3.ytimg.com/vi/nybuISX172A/hqdefault.jpg" width=160
 The new integration between Forward Networks and NetBox enables users to:
 
 - E...<br/><img src="https://i1.ytimg.com/vi/TSX14uke1NE/hqdefault.jpg" width=160/>
-
-- [NetBox Automation Heroes: Proactive and Reactive configuration assurance with NetBox and Netpicker](https://www.youtube.com/watch?v=sEyKYKWH9oY)<br>NetBox Automation Heroes is a video series inspired by the Netbox and network automation communities.
-
-In Episode 2, Mark Coleman, Chief Evangelist of NetBox Labs, is joined by Otto Coster, Lead Softw...<br/><img src="https://i4.ytimg.com/vi/sEyKYKWH9oY/hqdefault.jpg" width=160/>
 
 
 ## Get involved

@@ -49,17 +49,21 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 📝 Latest blog articles
 
 
+- [What Is DCIM and Why Is It Important?](https://netboxlabs.com/blog/what-is-dcim-and-why-is-it-important/) by HitSubscribe Ops Team.
 - [Viva Las Vegas! NetBox Labs at Cisco Live US 2024](https://netboxlabs.com/blog/viva-las-vegas-netbox-labs-at-cisco-live-us-2024/) by Rich Bibby.
 - [Icinga and NetBox Labs Partner to Automate Network Monitoring](https://netboxlabs.com/blog/icinga-and-netbox-labs-partner-to-automate-network-monitoring/) by Kris Beevers.
 - [NetBox Reorder-Rack Plugin Author Alex Gittings Claims Second NetBox Labs Plugin Bounty](https://netboxlabs.com/blog/netbox-reorder-rack-plugin-author-alex-gittings-claims-second-netbox-labs-plugin-bounty/) by Jeff Gehlbach.
 - [Announcing General Availability of the ServiceNow CMDB and Workflow Integrations for NetBox Enterprise and NetBox Cloud](https://netboxlabs.com/blog/announcing-general-availability-of-the-servicenow-cmdb-and-workflow-integrations-for-netbox-enterprise-and-netbox-cloud/) by Kris Beevers.
-- [How to succeed with Network Automation using NetBox, Slurp’it and Netpicker](https://netboxlabs.com/blog/how-to-succeed-with-network-automation-using-netbox-slurpit-and-netpicker/) by Mark Coleman.
 
 
 ## Youtube videos
 <img src="images/youtube.jpeg" align="right" width="96" />
 
 
+
+- [NetBox Automation Heroes - Kriten.io - Scaling Network Automation without the Trouble](https://www.youtube.com/watch?v=u3QPMFkeFmI)<br>NetBox Automation Heroes is a video series inspired by the Netbox and network automation communities.
+
+In Episode 3, Mark Coleman, Chief Evangelist of NetBox Labs, is joined by Steve Corp, Vlad Kupriy...<br/><img src="https://i2.ytimg.com/vi/u3QPMFkeFmI/hqdefault.jpg" width=160/>
 
 - [Webinar New Security and Efficiency Enhancements in NetBox Cloud](https://www.youtube.com/watch?v=KOFfNfN2VgY)<br>This insightful webinar covers the latest NetBox Cloud Platform features designed to enhance both the security and efficiency of your network management.
 
@@ -74,12 +78,6 @@ A guided tour of the N...<br/><img src="https://i4.ytimg.com/vi/KOFfNfN2VgY/hqde
 - [Network Test Automation on Steroids: NetBox and Netpicker](https://www.youtube.com/watch?v=nybuISX172A)<br>Watch this webinar and learn how to supercharge your network with Automated Testing using NetBox with Netpicker.io and replace your ‘legacy’ config backup tools with a modern and free alternative.
 
 It...<br/><img src="https://i3.ytimg.com/vi/nybuISX172A/hqdefault.jpg" width=160/>
-
-- [Webinar  Network Discovery, Assurance & Compliance Validation with Forward Networks and NetBox Labs](https://www.youtube.com/watch?v=TSX14uke1NE)<br>Join this webinar to learn how Forward Networks and NetBox Labs are lowering the barrier to network automation adoption.
-
-The new integration between Forward Networks and NetBox enables users to:
-
-- E...<br/><img src="https://i1.ytimg.com/vi/TSX14uke1NE/hqdefault.jpg" width=160/>
 
 
 ## Get involved

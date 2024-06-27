@@ -11,6 +11,8 @@
           staticGatewayIp: 192.168.20.1
           staticIp: "{{ primary_ip4 }}"
           staticSubnetMask: 255.255.255.0
+          staticDns:
+          - 8.8.8.8
           usingStaticIp: true
 
     - name: Get Device Management Information

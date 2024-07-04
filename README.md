@@ -49,11 +49,11 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 📝 Latest blog articles
 
 
+- [Branching and Change Management is Coming to NetBox – Announcing Private Preview of NetBox Branch Management](https://netboxlabs.com/blog/branching-and-change-management-is-coming-to-netbox-announcing-private-preview-of-netbox-branch-management/) by Kris Beevers.
 - [Exploring the Red Hat Ansible Certified Collection for NetBox – Part One](https://netboxlabs.com/blog/exploring-the-red-hat-ansible-certified-collection-for-netbox-part-one/) by Rich Bibby.
 - [Announcing Diode Agent: a new, lightweight network device discovery tool to streamline NetBox data entry with Diode](https://netboxlabs.com/blog/announcing-diode-agent-a-lightweight-new-network-device-discovery-tool-to-streamline-netbox-data-entry-with-diode/) by Mark Coleman.
 - [An In-Depth Guide to Writing Network Documentation](https://netboxlabs.com/blog/an-in-depth-guide-to-writing-network-documentation/) by HitSubscribe Ops Team.
 - [What Is DCIM and Why Is It Important?](https://netboxlabs.com/blog/what-is-dcim-and-why-is-it-important/) by HitSubscribe Ops Team.
-- [Viva Las Vegas! NetBox Labs at Cisco Live US 2024](https://netboxlabs.com/blog/viva-las-vegas-netbox-labs-at-cisco-live-us-2024/) by Rich Bibby.
 
 
 ## Youtube videos

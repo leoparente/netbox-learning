@@ -1,5 +1,5 @@
 ---
-- name: Lookup NetBox Device Data
+- name: Lookup NetBox Device Data Based on Role
   hosts: localhost
   gather_facts: no
 

@@ -61,6 +61,10 @@ This webinar shows you how to get started on your Network Automation journey wit
 
 
 
+- [Webinar  Device Configuration Deep Dive](https://www.youtube.com/watch?v=GZIOENxf7cU)<br>Device Configuration is the perennial network automation example but once you scratch the surface things quickly become complicated.
+
+In this panel session Mark Coleman and Rich Bibby from NetBox Labs...<br/><img src="https://i4.ytimg.com/vi/GZIOENxf7cU/hqdefault.jpg" width=160/>
+
 - [NetBox Automation Heroes - Kriten.io - Scaling Network Automation without the Trouble](https://www.youtube.com/watch?v=u3QPMFkeFmI)<br>NetBox Automation Heroes is a video series inspired by the Netbox and network automation communities.
 
 In Episode 3, Mark Coleman, Chief Evangelist of NetBox Labs, is joined by Steve Corp, Vlad Kupriy...<br/><img src="https://i2.ytimg.com/vi/u3QPMFkeFmI/hqdefault.jpg" width=160/>
@@ -74,10 +78,6 @@ A guided tour of the N...<br/><img src="https://i4.ytimg.com/vi/KOFfNfN2VgY/hqde
 - [ServiceNow ITSM Workflow Integration with NetBox for NetBox Labs Customers](https://www.youtube.com/watch?v=0F47R1gnp90)<br>Watch this demo to learn how to leverage NetBox Enterprise or NetBox Cloud’s data and automation capabilities to enrich ServiceNow ITSM workflows, such as incident and change management, asset managem...<br/><img src="https://i1.ytimg.com/vi/0F47R1gnp90/hqdefault.jpg" width=160/>
 
 - [ServiceNow CMDB NetBox Integration for NetBox Labs Customers](https://www.youtube.com/watch?v=nFSDhfwHcSk)<br>Watch this demo of the bidirectional integration between NetBox Enterprise or NetBox Cloud and ServiceNow’s CMDB, for granularly configured bidirectional sharing and synchronization of network and inf...<br/><img src="https://i3.ytimg.com/vi/nFSDhfwHcSk/hqdefault.jpg" width=160/>
-
-- [Network Test Automation on Steroids: NetBox and Netpicker](https://www.youtube.com/watch?v=nybuISX172A)<br>Watch this webinar and learn how to supercharge your network with Automated Testing using NetBox with Netpicker.io and replace your ‘legacy’ config backup tools with a modern and free alternative.
-
-It...<br/><img src="https://i3.ytimg.com/vi/nybuISX172A/hqdefault.jpg" width=160/>
 
 
 ## Get involved

@@ -1,6 +1,12 @@
-# Diode Private Preview
+# Diode
+
+Diode is a NetBox data ingestion service that greatly simplifies and enhances the process to add and update network data in NetBox, ensuring your network source of truth is always accurate and can be trusted to power your network automation pipelines. Our guiding principle in designing Diode has been to make it as easy as possible to get data into NetBox, removing as much burden as possible from the user while shifting that effort to technology.
+
+See the main [Diode project](https://github.com/netboxlabs/diode) page to find more details and additional resources.
 
 ## Diode SDK Python
+
+To use the examples in this repository, you'll need to install the Diode SDK.
 
 ### Set Up and Installation
 
@@ -30,7 +36,7 @@ pip install netboxlabs-diode-sdk
 4. Set the following environment variables:
 
 ```bash
-export DIODE_API_KEY=<provided during Diode private preview program onboarding>
+export DIODE_API_KEY=<generated when configuring your Diode plugin>
 ```
 
 ### Example scripts

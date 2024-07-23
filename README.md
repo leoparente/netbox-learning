@@ -49,11 +49,11 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 📝 Latest blog articles
 
 
+- [NetBox Data Ingestion Service Diode Now Available for Public Preview](https://netboxlabs.com/blog/netbox-data-ingestion-service-diode-now-available-for-public-preview/) by Kris Beevers.
 - [How to Use Red Hat Ansible Automation Platform to Define Intended Network State in NetBox](https://netboxlabs.com/blog/how-to-use-red-hat-ansible-automation-platform-to-define-intended-network-state-in-netbox/) by Rich Bibby.
 - [Technology Showcase: An Inside Look at Deploying NetBox Enterprise](https://netboxlabs.com/blog/technology-showcase-an-inside-look-at-deploying-netbox-enterprise/) by Kris Beevers.
 - [Using NetBox at the CiscoLive Network Operations Center](https://netboxlabs.com/blog/using-netbox-at-the-ciscolive-network-operations-center/) by Kiley Nichols.
 - [How to Use NetBox as a Dynamic Inventory Source for the Red Hat Ansible Automation Platform](https://netboxlabs.com/blog/how-to-use-netbox-as-a-dynamic-inventory-source-for-the-red-hat-ansible-automation-platform/) by Rich Bibby.
-- [Branching and Change Management is Coming to NetBox – Announcing Private Preview of NetBox Branch Management](https://netboxlabs.com/blog/branching-and-change-management-is-coming-to-netbox-announcing-private-preview-of-netbox-branch-management/) by Kris Beevers.
 
 
 ## Youtube videos

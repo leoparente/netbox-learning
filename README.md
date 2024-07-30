@@ -61,6 +61,8 @@ This webinar shows you how to get started on your Network Automation journey wit
 
 
 
+- [July 2024 NetBox Community Call](https://www.youtube.com/watch?v=_nFgv4ixoUE)<br>Learn what new features are coming for NetBox and watch a demo presentation from Eric Pearce, IT Systems Architect at Nutanix....<br/><img src="https://i4.ytimg.com/vi/_nFgv4ixoUE/hqdefault.jpg" width=160/>
+
 - [Webinar  Device Configuration Deep Dive](https://www.youtube.com/watch?v=GZIOENxf7cU)<br>Device Configuration is the perennial network automation example but once you scratch the surface things quickly become complicated.
 
 In this panel session Mark Coleman and Rich Bibby from NetBox Labs...<br/><img src="https://i4.ytimg.com/vi/GZIOENxf7cU/hqdefault.jpg" width=160/>
@@ -76,8 +78,6 @@ The webinar includes:
 A guided tour of the N...<br/><img src="https://i4.ytimg.com/vi/KOFfNfN2VgY/hqdefault.jpg" width=160/>
 
 - [ServiceNow ITSM Workflow Integration with NetBox for NetBox Labs Customers](https://www.youtube.com/watch?v=0F47R1gnp90)<br>Watch this demo to learn how to leverage NetBox Enterprise or NetBox Cloud’s data and automation capabilities to enrich ServiceNow ITSM workflows, such as incident and change management, asset managem...<br/><img src="https://i1.ytimg.com/vi/0F47R1gnp90/hqdefault.jpg" width=160/>
-
-- [ServiceNow CMDB NetBox Integration for NetBox Labs Customers](https://www.youtube.com/watch?v=nFSDhfwHcSk)<br>Watch this demo of the bidirectional integration between NetBox Enterprise or NetBox Cloud and ServiceNow’s CMDB, for granularly configured bidirectional sharing and synchronization of network and inf...<br/><img src="https://i3.ytimg.com/vi/nFSDhfwHcSk/hqdefault.jpg" width=160/>
 
 
 ## Get involved

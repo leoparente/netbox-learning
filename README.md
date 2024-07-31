@@ -49,11 +49,11 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 📝 Latest blog articles
 
 
+- [Technology Showcase: Deploying Multi-node Clusters with NetBox Enterprise](https://netboxlabs.com/blog/technology-showcase-deploying-multi-node-clusters-with-netbox-enterprise/) by Kris Beevers.
 - [Expanding and Sustaining our Investments in NetBox: How We’re Approaching Licensing for Some NetBox Add-ons](https://netboxlabs.com/blog/expanding-and-sustaining-our-investments-in-netbox-how-were-approaching-licensing-for-some-netbox-add-ons/) by Shannon Weyrick.
 - [Announcing Four New Standard NetBox Cloud Regions: Sydney, Canada, London, and Frankfurt](https://netboxlabs.com/blog/announcing-four-new-standard-netbox-cloud-regions/) by Kris Beevers.
 - [How to Use Red Hat Ansible Automation Platform to Query and Return Data from NetBox](https://netboxlabs.com/blog/how-to-use-red-hat-ansible-automation-platform-to-query-and-return-data-from-netbox/) by Rich Bibby.
 - [NetBox Data Ingestion Service Diode Now Available for Public Preview](https://netboxlabs.com/blog/netbox-data-ingestion-service-diode-now-available-for-public-preview/) by Kris Beevers.
-- [How to Use Red Hat Ansible Automation Platform to Define Intended Network State in NetBox](https://netboxlabs.com/blog/how-to-use-red-hat-ansible-automation-platform-to-define-intended-network-state-in-netbox/) by Rich Bibby.
 
 
 ## Youtube videos

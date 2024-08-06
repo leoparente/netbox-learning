@@ -39,19 +39,19 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 🚛 NetBox OSS releases
 
 
-- [v4.0.8 - 2024-07-26](https://github.com/netbox-community/netbox/releases/tag/v4.0.8) 🌟
+- [v4.1-beta1 - 2024-08-05](https://github.com/netbox-community/netbox/releases/tag/v4.1-beta1) 🌟
+- [v4.0.8 - 2024-07-26](https://github.com/netbox-community/netbox/releases/tag/v4.0.8)
 - [v4.0.7 - 2024-07-09](https://github.com/netbox-community/netbox/releases/tag/v4.0.7)
 - [v4.0.6 - 2024-06-24](https://github.com/netbox-community/netbox/releases/tag/v4.0.6)
 - [v4.0.5 - 2024-06-06](https://github.com/netbox-community/netbox/releases/tag/v4.0.5)
-- [v4.0.3 - 2024-05-22](https://github.com/netbox-community/netbox/releases/tag/v4.0.3)
 
 
 ## 📝 Latest blog articles
 
 
+- [Using Diode and the Diode Agent to Accelerate Device Discovery With NetBox](https://netboxlabs.com/blog/using-diode-and-the-diode-agent-to-accelerate-device-discovery-with-netbox/) by Richard Boucher.
 - [Technology Showcase: Deploying Multi-node Clusters with NetBox Enterprise](https://netboxlabs.com/blog/technology-showcase-deploying-multi-node-clusters-with-netbox-enterprise/) by Kris Beevers.
 - [Expanding and Sustaining our Investments in NetBox: How We’re Approaching Licensing for Some NetBox Add-ons](https://netboxlabs.com/blog/expanding-and-sustaining-our-investments-in-netbox-how-were-approaching-licensing-for-some-netbox-add-ons/) by Shannon Weyrick.
-- [Announcing Four New Standard NetBox Cloud Regions: Sydney, Canada, London, and Frankfurt](https://netboxlabs.com/blog/announcing-four-new-standard-netbox-cloud-regions/) by Kris Beevers.
 - [How to Use Red Hat Ansible Automation Platform to Query and Return Data from NetBox](https://netboxlabs.com/blog/how-to-use-red-hat-ansible-automation-platform-to-query-and-return-data-from-netbox/) by Rich Bibby.
 - [NetBox Data Ingestion Service Diode Now Available for Public Preview](https://netboxlabs.com/blog/netbox-data-ingestion-service-diode-now-available-for-public-preview/) by Kris Beevers.
 

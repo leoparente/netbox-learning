@@ -49,11 +49,11 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 📝 Latest blog articles
 
 
+- [Announcing NetBox 4.1 Beta With a Host of Features and Enhancements](https://netboxlabs.com/blog/netbox-4-1-beta-features-enhancements/) by Jeremy Stretch.
 - [Using Diode and the Diode Agent to Accelerate Device Discovery With NetBox](https://netboxlabs.com/blog/using-diode-and-the-diode-agent-to-accelerate-device-discovery-with-netbox/) by Richard Boucher.
 - [Technology Showcase: Deploying Multi-node Clusters with NetBox Enterprise](https://netboxlabs.com/blog/technology-showcase-deploying-multi-node-clusters-with-netbox-enterprise/) by Kris Beevers.
 - [Expanding and Sustaining our Investments in NetBox: How We’re Approaching Licensing for Some NetBox Add-ons](https://netboxlabs.com/blog/expanding-and-sustaining-our-investments-in-netbox-how-were-approaching-licensing-for-some-netbox-add-ons/) by Shannon Weyrick.
 - [How to Use Red Hat Ansible Automation Platform to Query and Return Data from NetBox](https://netboxlabs.com/blog/how-to-use-red-hat-ansible-automation-platform-to-query-and-return-data-from-netbox/) by Rich Bibby.
-- [NetBox Data Ingestion Service Diode Now Available for Public Preview](https://netboxlabs.com/blog/netbox-data-ingestion-service-diode-now-available-for-public-preview/) by Kris Beevers.
 
 
 ## Youtube videos

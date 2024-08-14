@@ -5,11 +5,23 @@
 
 ## 🧑🏻‍🏫 Tutorials and webinars
 
+### Exploring the Red Hat Ansible Certified Collection for NetBox
+
+[README.md](netbox-ansible-collection-quick-start/README.md)
+
+The Red Hat Ansible Certified Collection for NetBox enables networking teams to leverage NetBox as the dynamic inventory for Ansible Automation Platform automation jobs. Learn how this workflow not only streamlines network operations, but also enables network automations to more consistently apply to the correct infrastructure, enhancing reliability, accuracy and ultimately, network performance, while accelerating the operations of networking and infrastructure teams.
+
+What you will learn:
+
+- An overview of the Red Hat Ansible Certified Content Collection for NetBox modules
+- How the Collection fits within modern network automation architecture frameworks
+- Core uses cases for the collection, including network state management, network dynamic inventory, and querying and returning elements from NetBox.
+
 ### Getting Started with Network Test Automation: NetBox + pyATS + Genie
 
 [README.md](netbox-pyats-webinar/README.md)
 
-Learn how to get started with network test automation using NetBox, pyATS and Genie. 
+Learn how to get started with network test automation using NetBox, pyATS and Genie.
 
 - Introduction to NetBox, pyATS and Genie: Discover what each of these amazing tools can do and how they fit together in a modern network automation solution.
 - Using NetBox as a Dynamic Inventory Source for pyATS: Learn how to integrate NetBox with pyATS for efficient testbed file creation.

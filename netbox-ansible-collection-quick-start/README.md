@@ -1,6 +1,10 @@
 # NetBox Ansible Collection - Quick Start
 
-A short guide to getting started with the Ansible Collection for Netbox. This is a companion repo to the talks titled **Introducing the NetBox integration with Ansible Automation Platform** given at Cisco Live Las Vegas 2024, by Rich Bibby from Netbox Labs and Dafné Mendoza from Red Hat Ansible. You can find the slide deck [here](NetBox-Integration-with-Ansible-Automation-Platform-CLUS-2024.pdf).
+A short guide to getting started with the Ansible Collection for NetBox. This is a companion repo for the following:
+
+- Talk titled **Introducing the NetBox integration with Ansible Automation Platform** given at Cisco Live Las Vegas 2024, by Rich Bibby from Netbox Labs and Dafné Mendoza from Red Hat Ansible. You can find the slide deck [here](NetBox-Integration-with-Ansible-Automation-Platform-CLUS-2024.pdf).
+- Webinar [Exploring the Red Hat Ansible Certified Collection for NetBox](https://netboxlabs.com/events/webinar-exploring-the-netbox-ansible-collection/) hosted by Rich Bibby from NetBox and Leonardo Gallego from Red Hat Ansible. You can find the slide deck [here](./Webinar-Exploring-the-Red-Hat-Ansible-Certified-Collection-for-NetBox.pdf).
+- Blog series [Exploring the Red Hat Ansible Certified Collection for NetBox](https://netboxlabs.com/blog/exploring-the-red-hat-ansible-certified-collection-for-netbox-part-one/).
 
 ![netbox ansible collection](images/ansible_collection.png)
 

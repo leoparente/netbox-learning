@@ -51,11 +51,11 @@ This webinar shows you how to get started on your Network Automation journey wit
 ## 🚛 NetBox OSS releases
 
 
-- [v4.1-beta1 - 2024-08-05](https://github.com/netbox-community/netbox/releases/tag/v4.1-beta1) 🌟
+- [v4.0.9 - 2024-08-14](https://github.com/netbox-community/netbox/releases/tag/v4.0.9) 🌟
+- [v4.1-beta1 - 2024-08-05](https://github.com/netbox-community/netbox/releases/tag/v4.1-beta1)
 - [v4.0.8 - 2024-07-26](https://github.com/netbox-community/netbox/releases/tag/v4.0.8)
 - [v4.0.7 - 2024-07-09](https://github.com/netbox-community/netbox/releases/tag/v4.0.7)
 - [v4.0.6 - 2024-06-24](https://github.com/netbox-community/netbox/releases/tag/v4.0.6)
-- [v4.0.5 - 2024-06-06](https://github.com/netbox-community/netbox/releases/tag/v4.0.5)
 
 
 ## 📝 Latest blog articles

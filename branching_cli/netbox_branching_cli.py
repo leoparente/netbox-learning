@@ -48,9 +48,10 @@ def get_branches(branch_name=None):
     
     return branches
 
-def get_changes_count(branch_id):
+def get_changes_and_conflicts(branch_id):
     """
-    Retrieves the number of changes for a specific branch by filtering the changes endpoint.
+    Retrieves the number of changes and conflicts for a specific branch by filtering the changes endpoint.
+    Returns a tuple: (number_of_changes, number_of_conflicts, conflicts_details)
     """
     changes_endpoint = f"{NETBOX_URL}/api/plugins/branching/changes/"
     headers = {
@@ -67,13 +68,133 @@ def get_changes_count(branch_id):
         
         # Filter changes that belong to the given branch_id
         branch_changes = [change for change in changes if change['branch']['id'] == branch_id]
-        return len(branch_changes)
+        number_of_changes = len(branch_changes)
+
+        # Gather conflict details
+        conflicts_details = []
+        for change in branch_changes:
+            if change.get('conflicts'):
+                for conflict in change['conflicts']:
+                    conflicts_details.append({
+                        'object_name': change['object']['name'],
+                        'original': change['diff']['original'].get(conflict, 'N/A'),
+                        'branch': change['diff']['modified'].get(conflict, 'N/A'),
+                        'main': change['diff']['current'].get(conflict, 'N/A')
+                    })
+
+        number_of_conflicts = len(conflicts_details)
+
+        return number_of_changes, number_of_conflicts, conflicts_details
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err} - Status Code: {response.status_code}")
-        return "N/A"
+        return "N/A", "N/A", []
     except Exception as err:
         print(f"An error occurred: {err}")
-        return "N/A"
+        return "N/A", "N/A", []
+
+def merge_branch(branch_name):
+    """
+    Merges the branch with the given name.
+    """
+    branches = get_branches(branch_name)
+    if not branches:
+        print(f"No branch found with name: {branch_name}")
+        return
+
+    branch = branches[0]
+    branch_id = branch.get('id')
+
+    # Check for changes and conflicts
+    changes_count, conflicts_count, conflicts_details = get_changes_and_conflicts(branch_id)
+
+    if conflicts_count > 0:
+        print(f"You are attempting to merge branch {branch_name} which has {conflicts_count} conflicts:")
+        print(tabulate(
+            [
+                [conflict['object_name'], conflict['original'], conflict['branch'], conflict['main']]
+                for conflict in conflicts_details
+            ],
+            headers=["Object", "Main (original)", "Branch (current)", "Main (current)"],
+            tablefmt="pretty"
+        ))
+
+        confirm = input(f"Do you want to proceed with the merge? (yes/no): ")
+        if confirm.lower() != 'yes':
+            print("Merge aborted.")
+            return
+
+    merge_endpoint = f"{NETBOX_URL}/api/plugins/branching/branches/{branch_id}/merge/"
+    headers = {
+        "Authorization": f"Token {NETBOX_TOKEN}",
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+    }
+
+    # Include the commit parameter
+    data = {
+        "commit": True
+    }
+
+    try:
+        response = requests.post(merge_endpoint, headers=headers, json=data)
+        response.raise_for_status()
+        print(f"Branch '{branch_name}' merged successfully.")
+    except requests.exceptions.HTTPError as http_err:
+        print(f"HTTP error occurred: {http_err} - Status Code: {response.status_code}")
+    except Exception as err:
+        print(f"An error occurred: {err}")
+
+def sync_branch(branch_name):
+    """
+    Syncs the branch with the given name.
+    """
+    branches = get_branches(branch_name)
+    if not branches:
+        print(f"No branch found with name: {branch_name}")
+        return
+
+    branch = branches[0]
+    branch_id = branch.get('id')
+
+    # Check for changes and conflicts
+    changes_count, conflicts_count, conflicts_details = get_changes_and_conflicts(branch_id)
+
+    if conflicts_count > 0:
+        print(f"You are attempting to sync branch {branch_name} which has {conflicts_count} conflicts:")
+        print(tabulate(
+            [
+                [conflict['object_name'], conflict['original'], conflict['branch'], conflict['main']]
+                for conflict in conflicts_details
+            ],
+            headers=["Object", "Main (original)", "Branch (current)", "Main (current)"],
+            tablefmt="pretty"
+        ))
+
+        confirm = input(f"Do you want to proceed with the sync? (yes/no): ")
+        if confirm.lower() != 'yes':
+            print("Sync aborted.")
+            return
+
+    sync_endpoint = f"{NETBOX_URL}/api/plugins/branching/branches/{branch_id}/sync/"
+    headers = {
+        "Authorization": f"Token {NETBOX_TOKEN}",
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+    }
+
+    # Include the commit parameter
+    data = {
+        "commit": True
+    }
+
+    try:
+        response = requests.post(sync_endpoint, headers=headers, json=data)
+        response.raise_for_status()
+        print(f"Branch '{branch_name}' synced successfully.")
+    except requests.exceptions.HTTPError as http_err:
+        print(f"HTTP error occurred: {http_err} - Status Code: {response.status_code}")
+    except Exception as err:
+        print(f"An error occurred: {err}")
 
 def create_branch(branch_name):
     """
@@ -153,6 +274,14 @@ def main():
     parser_rm = subparsers.add_parser('rm', help='Remove (delete) a branch')
     parser_rm.add_argument('branch_name', help='Name of the branch to remove')
 
+    # Subparser for 'sync' command
+    parser_sync = subparsers.add_parser('sync', help='Sync a branch')
+    parser_sync.add_argument('branch_name', help='Name of the branch to sync')
+
+    # Subparser for 'merge' command
+    parser_merge = subparsers.add_parser('merge', help='Merge a branch')
+    parser_merge.add_argument('branch_name', help='Name of the branch to merge')
+
     args = parser.parse_args()
 
     if not args.command:
@@ -169,12 +298,12 @@ def main():
                 status = branch.get('status', 'N/A')
                 created_at = branch.get('created', 'N/A')
 
-                # Get the number of changes associated with this branch
-                changes_count = get_changes_count(branch_id)
+                # Get the number of changes and conflicts associated with this branch
+                changes_count, conflicts_count, _ = get_changes_and_conflicts(branch_id)
                 
-                table.append([branch_id, branch_name, status, changes_count, created_at])
+                table.append([branch_id, branch_name, status, changes_count, conflicts_count, created_at])
 
-            headers = ["ID", "Name", "Status", "Changes", "Created At"]
+            headers = ["ID", "Name", "Status", "Changes", "Conflicts", "Created At"]
             print(tabulate(table, headers, tablefmt="pretty"))
         else:
             print("No branches found or unexpected response format.")
@@ -185,23 +314,30 @@ def main():
             branch_id = branch.get('id', 'N/A')
             status = branch.get('status', 'N/A')
 
-            # Get the number of changes associated with this branch
-            changes_count = get_changes_count(branch_id)
+            # Get the number of changes and conflicts associated with this branch
+            changes_count, conflicts_count, _ = get_changes_and_conflicts(branch_id)
 
             table = [[
                 branch.get('id', 'N/A'),
                 branch.get('name', 'N/A'),
                 branch.get('status', 'N/A'),
                 changes_count,
+                conflicts_count,
                 branch.get('created', 'N/A')
             ]]
-            headers = ["ID", "Name", "Status", "Changes", "Created At"]
+            headers = ["ID", "Name", "Status", "Changes", "Conflicts", "Created At"]
             print(tabulate(table, headers, tablefmt="pretty"))
         else:
             print("Failed to create branch.")
 
     elif args.command == "rm":
         delete_branch(args.branch_name)
+
+    elif args.command == "sync":
+        sync_branch(args.branch_name)
+
+    elif args.command == "merge":
+        merge_branch(args.branch_name)
 
 if __name__ == "__main__":
     main()

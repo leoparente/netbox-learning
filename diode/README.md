@@ -44,7 +44,7 @@ export DIODE_API_KEY=<generated when configuring your Diode plugin>
 All scripts have an optional flags:
 
 ```
---target TARGET  the target address of the Diode server (default: grpc://localhost:8081)
+--target TARGET  the target address of the Diode server (default: grpc://localhost:8080/diode)
 --apply          apply the changes (default: False)
 ```
 

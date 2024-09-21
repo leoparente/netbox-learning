@@ -74,7 +74,7 @@ def main():
     parser.add_argument(
         "--target",
         type=str,
-        default="grpc://localhost:8081",
+        default="grpc://localhost:8080/diode",
         help="the target address of the Diode server",
     )
     parser.add_argument(

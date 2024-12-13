@@ -14,6 +14,10 @@
 >  
 > The installation is easy to follow, but takes about 10 minutes
 
+## Installation Video (Click to launch :rocket:)
+[![Installation Video](images/videos/Installation.png)](https://www.youtube.com/watch?v=g2zW7m5dz_0)
+---
+
 ## Clone the workshop
 
 ```

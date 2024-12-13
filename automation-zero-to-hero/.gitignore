@@ -1,0 +1,10 @@
+netbox-docker/
+*.bak
+clab-*/
+icinga2-docker-stack/
+slurpit/certs/
+slurpit/db/
+slurpit/logs/
+setup
+*/venv/
+workshop_setup/icinga/menu.ini

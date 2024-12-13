@@ -9,8 +9,8 @@ This workshop is intended to teach you the high-level concepts around intent-bas
 > This guide relies heavily on ContainerLab which does not have native support for MacOS  
 > You are very welcome to figure out MacOS and submit a PR
 
----
-INSERT VIDEO 1 - Introduction
+## Introduction Video (Click to launch :rocket:)
+[![Introduction Video](docs/images/videos/Introduction.png)](https://www.youtube.com/watch?v=iYRgVYqt8LU)
 ---
 
 ## Sections

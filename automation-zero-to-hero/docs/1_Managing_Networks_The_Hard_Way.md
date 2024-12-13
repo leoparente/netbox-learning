@@ -5,7 +5,7 @@
 > All instructions throughout this workshop are relative to the project root directory  
 > where you Git cloned the project  
 
-> > [!TIP]
+> [!TIP]
 > 
 > Be sure to run `source 0_set_envvars.sh` when you first open your terminal  
 

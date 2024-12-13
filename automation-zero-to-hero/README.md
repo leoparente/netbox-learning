@@ -7,8 +7,11 @@ This workshop is intended to teach you the high-level concepts around intent-bas
 > [!TIP]
 >  
 > This guide relies heavily on ContainerLab which does not have native support for MacOS  
-> You are very welcome to figure out MacOS and submit a PR  
+> You are very welcome to figure out MacOS and submit a PR
 
+---
+INSERT VIDEO 1 - Introduction
+---
 
 ## Sections
 0. [Installation](docs/Installation.md) - Getting set up to follow the rest of the guide

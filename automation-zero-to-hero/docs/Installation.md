@@ -9,7 +9,14 @@
 
 > [!TIP]
 >  
-> The installation is easy to follow, but takes about 10 minutes  
+> The installation is easy to follow, but takes about 10 minutes
+
+## Clone the workshop
+
+```
+git clone https://github.com/netboxlabs/netbox-learning.git
+cd netbox-learning/automation-zero-to-hero
+```
 
 ## Set environment variables
 

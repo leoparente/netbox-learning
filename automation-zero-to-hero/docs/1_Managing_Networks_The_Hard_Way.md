@@ -3,6 +3,8 @@
 ## Video Guide (Click to launch :rocket:)
 [![Managing Networks The Hard Way Video](images/videos/TheHardWay.png)](https://www.youtube.com/watch?v=BRvxIik9hBc)
 
+---
+
 > [!TIP]
 > 
 > All instructions throughout this workshop are relative to the project root directory  

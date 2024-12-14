@@ -1,23 +1,41 @@
-# Verifying Intent - Monitoring driven from your SoT
+# Monitoring - Icinga
 
-To make sure your network is in the right state for this section, you can use the following command: `./3_start_network.sh network/5.1_monitoring`
+## Video Guide (Click to launch :rocket:)
+[![MonitoringIcinga](images/videos/MonitoringIcinga.png)](https://www.youtube.com/watch?v=TBD)
 
-Monitoring can be defined as the process to check to see if the stuff we care about is working. 
-When the monitoring tool can be configured from your Source of Truth, our intent can be verified.
+---
+
+> [!TIP]
+> 
+> To make sure your network is in the right state for this section, you can use the following command:  
+> `./3_start_network.sh network/5.1_monitoring`  
+
+Monitoring can be viewed as the process that checks to see if the networking is doing what it should be doing, but how do we tell the monitoring what the network should be doing? As we saw in `Section 1 - Managing Networks The Hard Way` the traditional approach is to configure the network and the monitoring separately. This works, but it requires discipline and coordination, which both cost time and energy. The reason why discipline and coordination are required is because we are duplicating data across systems: we tell a router that it's management IP is `172.168.0.1` and then we go and tell the monitoring that the router's management IP is `172.168.0.1`. The consequences of getting this wrong can be dire, and timing can be tricky.
+
+When we're using intent based network automation we can rely on the data in NetBox, our source of truth, to make sure that both the network and the monitoring are updated correctly.
 
 <img src="images/icinga/netbox-icinga.png" alt="Netbox and Icinga logos" title="Netbox and Icinga" width="1000" />
 
-[Icinga](https://icinga.com/) is a full featured, fully open source monitoring system. 
+## Icinga NetBox Integration
 
-The [integration](https://github.com/sol1/icingaweb2-module-netbox) between Icinga and NetBox lets us configure monitoring from our SoT which creates a feedback loop. The  monitoring lets us know that the data in Netbox is valid.
+[Icinga](https://icinga.com/) is a full featured, fully open source monitoring system, but the principles covered in this section can be applied to any monitoring system. NetBox Labs's partner [Sol1](https://sol1.com.au/) are network automation experts and Icinga power users who created an [integration](https://github.com/sol1/icingaweb2-module-netbox) between Icinga and NetBox which reduces the discipline and coordination needed to maintain accurate monitoring. The integration reads intended network state from NetBox and intelligently applies it to Icinga to create the necessary monitoring checks. The NetBox Icinga integration is battle tested and can handle many data types and edge cases, including powerful grouping functionality, so for example, SNMP settings per device type or latency per site, or NTP servers per region can all be modeled in Icinga.
 
-As the integration is very mature, it can handle many data types and edge cases. In addition all manner of grouping can be provided, so for example, SNMP settings per device type or latency per site, or NTP servers per region can all be imported and configuration created in Icinga. 
+> [!TIP]
+> 
+> This also acts as a check on the data in NetBox!  
+> 
+> As we saw in `Section 4 - Discovery and Reconciliation - Slurpit` whenever we see something going wrong,  
+> it could be an error in the network, or it could be that our intended state is incorrect  
 
 Lets get started!
 
 ___
 
-The first step is to update the device states in Netbox so that they will be imported by Icinga. Slurpit creates devices with a default status of `Inventory`. To be monitored by Icinga, their status needs to be set to `Active`.
+## Configuring our Source of Truth
+
+In order for the NetBox Icinga integration to do its magic we first need to make some updates in NetBox. The integration periodically polls NetBox to check if any of the devices are in the necessary state to be imported into Icinga. This allows operators to control which devices should be monitored by editing their intended network state, and is useful for managing device lifecycles, like bringing new hardware online and scheduled downtime.
+
+The first step is to update the device states in NetBox so that they will be imported by Icinga. Slurpit creates devices with a default status of `Inventory`. To be monitored by Icinga, their status needs to be set to `Active`.
 
 First login to NetBox.
 

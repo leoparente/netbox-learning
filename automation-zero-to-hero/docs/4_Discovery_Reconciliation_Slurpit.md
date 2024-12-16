@@ -1,5 +1,10 @@
 # Section 4 - Discovery and Reconciliation - Slurpit
 
+## Video Guide (Click to launch :rocket:)
+[![Discovery and Reconciliation - Slurpit](images/videos/DiscoRecon.png)](https://www.youtube.com/watch?v=yVEn6wgPZ5E)
+
+___
+
 Tools that are used to import operational state from our network into Netbox are typically called **Discovery** tools. Network Discovery typically falls into two categories:
 
 1. Network discovery - Scans a list of IPs or subnets to find any network devices in the network

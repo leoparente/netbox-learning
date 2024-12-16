@@ -1,5 +1,10 @@
 # Section 3 - NetBox - Our Network Source of Truth
 
+## Video Guide (Click to launch :rocket:)
+[![NetBox - Our Network Source of Truth](images/videos/NetBox-SoT.png)](https://www.youtube.com/watch?v=Onz8_xDiMfM)
+
+___
+
 A Network Source of Truth like [NetBox](https://netboxlabs.com/) is the bedrock of any network automation stategy. NetBox acts as your living documentation and captures the Low Level Design of your network, but initially our NetBox is empty (apart from a site called Slurpit, which you can ignore for now.)
 
 Populating NetBox typically happens in two stages:

@@ -1,5 +1,10 @@
 # Section 6 - Netpicker - Our configuration assurance tool
 
+## Video Guide (Click to launch :rocket:)
+[![Configuration Assurance - Netpicker](images/videos/ConfigAssurance.png)](https://www.youtube.com/watch?v=Jr8FjABbcaE)
+
+___
+
 > [!TIP]
 > Make sure your lab devices are in the correct state by running:
 > `./3_start_network.sh network/6.1_assurance/`  

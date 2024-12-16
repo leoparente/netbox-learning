@@ -1,6 +1,7 @@
 # Section 2 - Introducing Intent Based Network Automation
 
-- See workshop slides for this section
+## Video Guide (Click to launch :rocket:)
+[![Introducing Intent Based Network Automation](images/videos/IntentBased.png)](https://www.youtube.com/watch?v=ZZuiMBjgnts)
 
 ___
 

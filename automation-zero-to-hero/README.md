@@ -4,11 +4,6 @@ Welcome to NetBox Automation - Zero to Hero! In this workshop we will build a fu
 
 This workshop is intended to teach you the high-level concepts around intent-based networking, while also delivering you a fully functioning stack you can continue to experiment with. The workshop is split into sections covering different elements of the story. You should follow them sequentially.
 
-> [!TIP]
->  
-> This guide relies heavily on ContainerLab which does not have native support for MacOS  
-> You are very welcome to figure out MacOS and submit a PR
-
 ## Introduction Video (Click to launch :rocket:)
 [![Introduction Video](docs/images/videos/Introduction.png)](https://www.youtube.com/watch?v=iYRgVYqt8LU)
 ---
@@ -22,3 +17,4 @@ This workshop is intended to teach you the high-level concepts around intent-bas
 5. [Monitoring: Icinga](docs/5_Monitoring_Icinga.md) - An introduction to how monitoring can be made significantly easier when using intent based network automation
 6. [Configuration Assurance: Netpicker](docs/6_Configuration_Assurance_Netpicker.md) - A look at how configuration assurance in Netpicker can be driven by our intent in NetBox
 7. [Automated Network Changes: Ansible](docs/7_Automated_Network_Changes_Ansible.md) - And finally... we look at pushing updates to the network, using Ansible
+8. [Summary](docs/8_Summary.md) - A final recap of what we've learned

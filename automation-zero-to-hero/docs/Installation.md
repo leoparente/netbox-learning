@@ -6,6 +6,11 @@
 
 > [!TIP]
 >  
+> Unfortunately MacOS is not supported  
+> The workshop relies heavily on ContainerLab which does not have native support for MacOS  
+
+> [!TIP]
+>  
 > The workshop assumes it is running on an internet accessible machine and relies on the public IP  
 > for a lot of the functionality. This means that it _probably_ won't work on your local machine, but we aim  
 > to add that at a later stage.

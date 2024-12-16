@@ -16,7 +16,7 @@ ___
 > [!TIP]
 > 
 > To make sure your network is in the right state for this section, you can use the following command:
-> `./3_start_network.sh network/4.1_discovery_reconciliation
+> `./3_start_network.sh network/4.1_discovery_reconciliation`
 
 ## Discovering our network
 

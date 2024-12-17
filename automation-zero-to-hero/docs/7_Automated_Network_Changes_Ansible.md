@@ -23,7 +23,7 @@ So far youâ€™ve either been manually updating the network (or to save time, youâ
 
 ### Updating NTP settings
 
-In **Section 5 - Monitoring - Icinga** we made some manual changes to our devices to add NTP to our devices and checked the configurations with Netpicker. That exercise was both error prone and time consuming, even with just 2 devices. Now imagine you have thousands!
+In **Section 6 - Configuration Assurance - Netpicker** we made some manual changes to our devices to add NTP to our devices and checked the configurations with Netpicker. That exercise was both error prone and time consuming, even with just 2 devices. Now imagine you have thousands!
 
 Let's imagine we've decided that `ntp` settings should be site-wide in our network. The NetBox data model is highly extendible and gives us a few ways to do this, but we will be using Custom Fields. Let's add our site-wide `ntp` servers for our devices in NetBox.
 

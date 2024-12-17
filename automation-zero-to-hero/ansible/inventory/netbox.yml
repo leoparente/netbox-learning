@@ -1,6 +1,6 @@
 ---
 plugin: netbox.netbox.nb_inventory
-api_endpoint: http://157.230.86.184:8001
+api_endpoint: http://MY_EXTERNAL_IP:NETBOX_PORT
 token: 1234567890
 
 max_uri_length: 1000

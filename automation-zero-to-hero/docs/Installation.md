@@ -2,18 +2,14 @@
 
 > [!TIP]
 >  
-> This workshop is resource intensive. We recommend using a machine with at least 8GB of RAM and 4 cores.  
+> - This workshop is resource intensive. We recommend using a machine with at least 8GB of RAM and 4 cores.  
+> - The workshop has only been tested on Ubuntu 22.04. It _should_ work on other Linux distros but if you hit any problems please create an issue on in GitHub  
+> - Unfortunately MacOS is not supported. The workshop relies heavily on ContainerLab which does not have native support for MacOS  
 
 > [!TIP]
 >  
-> Unfortunately MacOS is not supported  
-> The workshop relies heavily on ContainerLab which does not have native support for MacOS  
-
-> [!TIP]
->  
-> The workshop assumes it is running on an internet accessible machine and relies on the public IP  
-> for a lot of the functionality. This means that it _probably_ won't work on your local machine, but we aim  
-> to add that at a later stage.
+> The workshop assumes it is running on an internet accessible machine and it relies on the public IP for a lot of functionality  
+> This means that **it will not work on your local machine**, but we aim to add that possibility at a later stage. Please use a cloud VM for now.    
 
 > [!TIP]
 >  

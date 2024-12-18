@@ -4,6 +4,10 @@ Welcome to NetBox Automation - Zero to Hero! In this workshop we will build a fu
 
 This workshop is intended to teach you the high-level concepts around intent-based networking, while also delivering you a fully functioning stack you can continue to experiment with. The workshop is split into sections covering different elements of the story. You should follow them sequentially.
 
+> [!TIP]
+>   
+> You can view the deck that is used throughout the videos here: [Network Automation Zero to Hero Deck](https://netboxlabs.com/wp-content/uploads/2024/12/Network-Automation-Zero-to-Hero-Deck.pdf)  
+
 ## Introduction Video (Click to launch :rocket:)
 [![Introduction Video](docs/images/videos/Introduction.png)](https://www.youtube.com/watch?v=iYRgVYqt8LU)
 ---

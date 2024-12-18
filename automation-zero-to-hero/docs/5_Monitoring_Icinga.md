@@ -49,7 +49,7 @@ Here we can see that 4 service checks are configured including a `Ping` check. N
 
 ## Manually configuring a Ping check with Icinga Director
 
-To get a feeling for the overhead introduced with manual monitoring configuration, let's configure a `Ping` check on one of our lab devices: `clab-autocon-srl1`
+To get a feeling for the overhead introduced with manual monitoring configuration, let's configure a `Ping` check on one of our lab devices: `clab-autocon2-srl1`
 
 To do this we will use Icinga Director, a powerful add-on for Icinga which we will later use to automatically configure our monitoring from NetBox. In the left-hand menu bar click on `Icinga Director` -> `Hosts` and then click on `Hosts` in the main window.
 

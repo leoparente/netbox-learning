@@ -1,5 +1,10 @@
 # Section 7 - Automated Network Changes - Ansible
 
+## Video Guide (Click to launch :rocket:)
+[![Automated Network Changes - Ansible](images/videos/AutomatedNetworkChanges.png)](https://www.youtube.com/watch?v=hDtcV7aHEW8)
+
+___
+
 You may be surprised that we're only getting to automating network changes in the last section of the workshop, afterall, isn't automation about making changes to the network?
 
 When we first reach for automation it's often because we're not really in control of our networks. We don't know exactly what is out there, how it is configured, and who is configuring it. Adding automated network changes in a situation like this can make things worse, not better.

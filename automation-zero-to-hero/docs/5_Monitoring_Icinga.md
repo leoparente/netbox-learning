@@ -1,5 +1,10 @@
 # Monitoring - Icinga
 
+## Video Guide (Click to launch :rocket:)
+[![Monitoring - Icinga](images/videos/MonitoringIcinga.png)](https://www.youtube.com/watch?v=xcsVmOtlVX4)
+
+___
+
 > [!TIP]
 > 
 > To make sure your network is in the right state for this section, you can use the following command:  

@@ -43,10 +43,14 @@ orb:
           defaults:
             site: New York NY
         scope:
-          - driver: ios
+          - driver: srl
             hostname: 172.24.0.100
             username: admin
-            password: admin
+            password: "NokiaSrl1!"
+            optional_args:
+               gnmi_port: 57401
+               insecure: True
+               skip_verify: True
 EOF
 
 cat agent.yaml

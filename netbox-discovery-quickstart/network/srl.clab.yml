@@ -2,6 +2,7 @@ name: discovery-quickstart-nokia
 
 mgmt:
   network: discovery-quickstart
+  ipv4-subnet: 172.24.0.0/24
 
 topology:
   nodes:

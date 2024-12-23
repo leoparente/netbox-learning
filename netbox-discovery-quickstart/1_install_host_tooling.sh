@@ -60,7 +60,7 @@ if ! groups "$current_user" | grep -q "\bdocker\b"; then
     echo "Please log out and back in for the group change to take effect."
 fi
 
-echo "--- Creating Docker Network ---"
-docker network create --driver=bridge --subnet="${DOCKER_SUBNET}" ${DOCKER_NETWORK}
+#echo "--- Creating Docker Network ---"
+#docker network create --driver=bridge --subnet="${DOCKER_SUBNET}" ${DOCKER_NETWORK}
 
 echo "--- Setup Complete ---"

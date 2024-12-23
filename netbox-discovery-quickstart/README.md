@@ -185,7 +185,7 @@ Now go and take a look into NetBox under `Diode`-> `Ingestion Logs` and you shou
 
 Now exit out of network discovery with `Ctrl+C`
 
-### Network Discovery
+### Device Discovery
 
 Using Device Discovery we will extract information from our lab devices and then ingest that information into NetBox. Device Discovery requires that we provide some information about our devices so that connections can be established.
 

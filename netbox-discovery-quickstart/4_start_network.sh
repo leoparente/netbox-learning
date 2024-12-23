@@ -7,20 +7,11 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
-NETWORK_DIR="$1"
+CLAB_FILE="$1"
 
-# Check if the specified directory exists
-if [ ! -d "$NETWORK_DIR" ]; then
-  echo "Error: Directory '$NETWORK_DIR' does not exist."
-  exit 1
-fi
-
-TOPOLOGY_FILENAME="autocon2.clab.yml"
-TOPOLOGY_FILE_PATH="$NETWORK_DIR/$TOPOLOGY_FILENAME"
-
-# Check if the topology file exists in the specified directory
-if [ ! -f "$TOPOLOGY_FILE_PATH" ]; then
-  echo "Error: Topology file '$TOPOLOGY_FILENAME' not found in '$NETWORK_DIR'."
+# Check if the specified clab file exists
+if [ ! -f "$CLAB_FILE" ]; then
+  echo "Error: File '$CLAB_FILE' does not exist."
   exit 1
 fi
 
@@ -40,9 +31,7 @@ fi
 
 # Starting network
 echo
-echo "--- Starting network from '$NETWORK_DIR' ---"
+echo "--- Starting network from '$CLAB_FILE' ---"
 echo
 
-pushd "$NETWORK_DIR" > /dev/null
-sudo clab deploy --topo "$TOPOLOGY_FILENAME" "${@:2}"
-popd > /dev/null
+sudo clab deploy --topo "$CLAB_FILE" "${@:2}"

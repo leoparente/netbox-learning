@@ -43,10 +43,10 @@ orb:
           defaults:
             site: New York NY
         scope:
-          - driver: srl
+          - driver: ios
             hostname: 172.24.0.100
             username: admin
-            password: NokiaSrl1!
+            password: admin
 EOF
 
 cat agent.yaml

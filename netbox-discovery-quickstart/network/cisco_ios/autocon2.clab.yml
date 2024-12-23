@@ -1,0 +1,18 @@
+name: discovery-quickstart-cisco
+
+mgmt:
+  network: discovery-quickstart
+
+topology:
+  nodes:
+    ios1:
+      kind: vr-csr
+      image: mrmrcoleman/vr-csr:17.03.06
+      mgmt-ipv4: 172.24.0.100
+    ios2:
+      kind: vr-csr
+      image: mrmrcoleman/vr-csr:17.03.06
+      mgmt-ipv4: 172.24.0.101
+
+  links:
+    - endpoints: ["ios1:eth1", "ios2:eth1"]

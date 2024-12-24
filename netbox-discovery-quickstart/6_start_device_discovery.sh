@@ -46,11 +46,9 @@ orb:
           - driver: srl
             hostname: 172.24.0.100
             username: admin
-            password: "NokiaSrl1!"
+            password: NokiaSrl1!
             optional_args:
-               gnmi_port: 57401
                insecure: True
-               skip_verify: True
 EOF
 
 cat agent.yaml
@@ -75,5 +73,3 @@ docker run -v $(pwd):/opt/orb/ \
 
 # End
 popd
-
-echo "Now go and check the NetBox Discovery ingestion logs: http://${MY_EXTERNAL_IP}:${NETBOX_PORT}/plugins/diode/ingestion-logs/"

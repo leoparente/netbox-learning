@@ -39,6 +39,18 @@ git clone https://github.com/netboxlabs/netbox-learning.git
 cd netbox-learning/netbox-discovery-quickstart
 ```
 
+### Install the required tooling on the host.
+
+```
+./0_install_host_tooling.sh
+```
+
+### Switch to the correct user
+
+```
+su - quickstart
+```
+
 ### Generate and expport the necessary environment variables for the quickstart.
 
 > [!TIP]
@@ -46,14 +58,10 @@ cd netbox-learning/netbox-discovery-quickstart
 > Make a note of the output of this step in case you need it later on  
 
 ```
-source 0_set_envvars.sh
+source 1_set_envvars.sh
 ```
 
-### Install the required tooling on the host.
 
-```
-./1_install_host_tooling.sh
-```
 
 ### Start NetBox with the Diode plugin installed and configured.
 

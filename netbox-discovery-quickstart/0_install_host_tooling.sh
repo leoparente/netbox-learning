@@ -1,16 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-# Check if all required environment variables are set
-REQUIRED_VARS=("DOCKER_SUBNET")
-
-for var in "${REQUIRED_VARS[@]}"; do
-  if [ -z "${!var:-}" ]; then
-    echo "Error: Required environment variable '$var' is not set."
-    exit 1
-  fi
-done
-
 # Detect the package manager (apt or yum/dnf)
 if command -v apt &> /dev/null; then
     PM="apt"
@@ -60,7 +50,10 @@ if ! groups "$current_user" | grep -q "\bdocker\b"; then
     echo "Please log out and back in for the group change to take effect."
 fi
 
-#echo "--- Creating Docker Network ---"
-#docker network create --driver=bridge --subnet="${DOCKER_SUBNET}" ${DOCKER_NETWORK}
+# Creating new user and adding to the correct groups
+USERNAME="quickstart"
+sudo useradd -m -s /bin/bash ${USERNAME}
+sudo usermod -aG sudo ${USERNAME}
+su - ${USERNAME}
 
 echo "--- Setup Complete ---"

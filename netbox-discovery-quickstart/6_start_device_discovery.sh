@@ -54,7 +54,7 @@ EOF
 cat agent.yaml
 
 echo
-echo "--- Added SR Linux driver ---"
+echo "--- Adding SR Linux driver ---"
 echo
 
 cat <<EOF > drivers.txt
@@ -62,7 +62,7 @@ napalm-srl==1.0.5
 EOF
 
 echo
-echo "--- Start the agent ---"
+echo "--- Starting agent ---"
 echo
 
 docker run -v $(pwd):/opt/orb/ \

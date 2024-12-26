@@ -50,10 +50,12 @@ if ! groups "$current_user" | grep -q "\bdocker\b"; then
     echo "Please log out and back in for the group change to take effect."
 fi
 
-# Creating new user and adding to the correct groups
+# Creating new user and adding to the correct groups, and set the permissions on the cloned repo
 USERNAME="quickstart"
 sudo useradd -m -s /bin/bash ${USERNAME}
+sudo passwd -d ${USERNAME}
 sudo usermod -aG sudo ${USERNAME}
-su - ${USERNAME}
+sudo usermod -aG docker ${USERNAME}
+sudo chown -R ${USERNAME}:${USERNAME} .
 
 echo "--- Setup Complete ---"

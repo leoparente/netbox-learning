@@ -32,26 +32,28 @@ You will be able to run simple scripts to use both features of NetBox Discovery:
 > - Unfortunately MacOS is not supported. The workshop relies heavily on ContainerLab which does not have native support for MacOS  
 
 
-### Clone the repo and go to the Discovery Quickstart.
+### Clone the repo and go to the Discovery Quickstart
 
 ```
+cd /opt
 git clone https://github.com/netboxlabs/netbox-learning.git
 cd netbox-learning/netbox-discovery-quickstart
 ```
 
-### Install the required tooling on the host.
+### Install the required tooling on the host and set up users
 
 ```
 ./0_install_host_tooling.sh
 ```
 
-### Switch to the correct user
+### Switch to the correct user and move to the correct directory again
 
 ```
 su - quickstart
+cd /opt/netbox-learning/netbox-discovery-quickstart
 ```
 
-### Generate and expport the necessary environment variables for the quickstart.
+### Generate and export the necessary environment variables for the quickstart
 
 > [!TIP]
 >   
@@ -60,8 +62,6 @@ su - quickstart
 ```
 source 1_set_envvars.sh
 ```
-
-
 
 ### Start NetBox with the Diode plugin installed and configured.
 

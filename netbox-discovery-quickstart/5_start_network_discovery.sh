@@ -14,7 +14,7 @@ done
 WORKING_DIR="network_discovery"
 
 # Remove config directory if it exists
-rm -fr ${WORKING_DIR}
+sudo rm -fr ${WORKING_DIR}
 
 # Recreate it and pushd in
 mkdir ${WORKING_DIR}

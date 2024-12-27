@@ -14,7 +14,7 @@ done
 WORKING_DIR="device_discovery"
 
 # Remove config directory if it exists
-rm -fr ${WORKING_DIR}
+sudo rm -fr ${WORKING_DIR}
 
 # Recreate it and pushd in
 mkdir ${WORKING_DIR}
@@ -45,6 +45,12 @@ orb:
         scope:
           - driver: srl
             hostname: 172.24.0.100
+            username: admin
+            password: NokiaSrl1!
+            optional_args:
+               insecure: True
+          - driver: srl
+            hostname: 172.24.0.101
             username: admin
             password: NokiaSrl1!
             optional_args:

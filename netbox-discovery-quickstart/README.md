@@ -14,9 +14,8 @@ You will be able to run simple scripts to use both features of NetBox Discovery:
 
 > [!TIP]
 >   
-> If you hit any issues when running through this quickstart guide you can get help by posting in the #netbox channel in the NetDev Slack
->  
-> If you don't already have an account in the NetDev Slack, you can create one here: [https://netdev.chat/](https://netdev.chat/)
+> If you hit any issues when running through this quickstart guide you can get help by posting in the #netbox channel in the NetDev Slack  
+> If you don't already have an account in the NetDev Slack, you can create one here: [https://netdev.chat/](https://netdev.chat/)  
 
 ## Setup
 
@@ -57,7 +56,9 @@ cd /opt/netbox-learning/netbox-discovery-quickstart
 
 > [!TIP]
 >   
-> Make a note of the output of this step in case you need it later on  
+> `1_set_envvars.sh` writes the variables it generates to a file in the root directory called `environment`  
+> This is so that you can run `1_set_envvars.sh` in separate terminals and get the same results  
+> If you need to recreate the envirionment variables, just delete `environment` and run the script again  
 
 ```
 source 1_set_envvars.sh
@@ -175,7 +176,7 @@ Here you can see various variables that will be populated automatically when you
             - ${DOCKER_SUBNET}
 ```
 
- `targets` is a list of single IPs, an IP ranges or subnets. In this case when we run the script we will insert a single subnet for our ContainerLab devices, which as mentioned above is `172.24.0.0/24`
+`targets` is a list of single IPs, an IP ranges or subnets. In this case when we run the script we will insert a single subnet for our ContainerLab devices, which as mentioned above is `172.24.0.0/24`
 
 ___
 
@@ -200,6 +201,88 @@ Using Device Discovery we will extract information from our lab devices and then
 Let's take a look at the configuration file that will be generated for Device Discovery.
 
 ```
-INSERT WHEN SR LINUX IS WORKING
+orb:
+  config_manager: 
+    active: local
+  backends:
+    device_discovery:
+    common:
+      diode:
+        target: grpc://${MY_EXTERNAL_IP}:8080/diode
+        api_key: ${DIODE_API_KEY}
+        agent_name: agent1
+  policies:
+    device_discovery:
+      discovery_1:
+        config:
+          schedule: "* * * * *"
+          defaults:
+            site: New York NY
+        scope:
+          - driver: srl
+            hostname: 172.24.0.100
+            username: admin
+            password: NokiaSrl1!
+            optional_args:
+               insecure: True
+          - driver: srl
+            hostname: 172.24.0.101
+            username: admin
+            password: NokiaSrl1!
+            optional_args:
+               insecure: True
 ```
 
+Again you can see various variables that will be populated automatically when you run the script below. Here's the most important part in which we define the devices for our network discovery.
+
+```
+        scope:
+          - driver: srl
+            hostname: 172.24.0.100
+            username: admin
+            password: NokiaSrl1!
+            optional_args:
+               insecure: True
+          - driver: srl
+            hostname: 172.24.0.101
+            username: admin
+            password: NokiaSrl1!
+            optional_args:
+               insecure: True
+```
+
+You can see that we need to provide the IPs, and SSH credentials for our lab devices. We've also used NAPALM's `optional_args` functionality to specifiy `insecure: True` which tells the NAPALM driver to skip TLS so we don't need to concern ourselves with certificates in this quickstart.
+
+Let's go ahead and run it:
+
+```
+./6_start_device_discovery.sh
+```
+
+First NetBox Discovery will load the environment and the policies we've defined in our configuration. The configuration section `schedule: "* * * * *"` tells the discovery agent to run every minute, so you'll need to wait for a minute to pass for the first device discovery run to execute.
+
+Keep an eye on the Diode ingestion logs by going to the left-hand menu in NetBox clicking on `Diode` -> `Ingestion logs`. Eventually you'll see our discovery ingestion logs show up with types including `Device`, `Prefix`, `IP Address`, and `Interface`.
+
+<img src="images/device_ingestion_logs.png" alt="Diode Device Ingestion Logs" title="Diode Device Ingestion Logs" width="1000" />
+
+You'll also notice in our configuration above that we defined the default site for devices to be `New York NY`. Go to NetBox and click on `Organization` -> `Sites` where you'll now see our `New York NY` site.
+
+Now click on `New York NY` and then `Devices` in the right hand pane, where you will now see our devices.
+
+<img src="images/ingested_devices.png" alt="NetBox Ingested Devices" title="NetBox Ingested Devices" width="1000" />
+
+Now click on the first device `srl1`. Here you can see that the `Device Type`, `Platform` and `Status` have all been set correctly.
+
+<img src="images/ingested_srl1.png" alt="NetBox Device Ingested srl1" title="NetBox Device Ingested srl1" width="1000" />
+
+Now click on the `Interfaces` tab for `srl1`. Now you'll see that all our our device interfaces have been successfully ingested into NetBox, with the correct administrative statuses which are called `Enabled` in NetBox.
+
+<img src="images/ingested_interfaces.png" alt="NetBox Device Ingested Interfaces" title="NetBox Device Ingested Interfaces" width="1000" />
+
+Lastly, click on the top interface `ethernet-1/1`. Now you'll see that NetBox Discovery has correctly ingested the correct `MAC Address`, `MTU`, and `Speed/Duplex` for the interface, and also whether or not this is a management interface.
+
+<img src="images/ingested_ethernet_1_1.png" alt="NetBox Ingested Interface" title="NetBox Ingested Interface" width="1000" />
+
+## Conclusion
+
+In this short guide you have learned the basics of NetBox Discovery's two modes of operation: network discovery and device discovery. Feel free to play around with the environment you've created, and to fork the repo to do your own experiments with NetBox Discovery.

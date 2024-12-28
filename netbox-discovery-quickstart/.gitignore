@@ -1,0 +1,9 @@
+netbox-docker/
+*.bak
+clab-*/
+device_discovery/
+diode/
+network_discovery/
+environment
+.docker/
+.sudo_as_admin_successful

@@ -45,11 +45,14 @@ cd netbox-learning/netbox-discovery-quickstart
 ./0_install_host_tooling.sh
 ```
 
-### Switch to the correct user and move to the correct directory again
+### Switch to the correct user
+
+> [!TIP]
+>  
+> We run as a separate user so that we can correctly mount our NetBox Discovery configuration in later steps  
 
 ```
 su - quickstart
-cd /opt/netbox-learning/netbox-discovery-quickstart
 ```
 
 ### Generate and export the necessary environment variables for the quickstart
@@ -221,14 +224,14 @@ orb:
         scope:
           - driver: srl
             hostname: 172.24.0.100
-            username: admin
-            password: NokiaSrl1!
+            username: ${SRLINUX_USERNAME}
+            password: ${SRLINUX_PASSWORD}
             optional_args:
                insecure: True
           - driver: srl
             hostname: 172.24.0.101
-            username: admin
-            password: NokiaSrl1!
+            username: ${SRLINUX_USERNAME}
+            password: ${SRLINUX_PASSWORD}
             optional_args:
                insecure: True
 ```
@@ -239,14 +242,14 @@ Again you can see various variables that will be populated automatically when yo
         scope:
           - driver: srl
             hostname: 172.24.0.100
-            username: admin
-            password: NokiaSrl1!
+            username: ${SRLINUX_USERNAME}
+            password: ${SRLINUX_PASSWORD}
             optional_args:
                insecure: True
           - driver: srl
             hostname: 172.24.0.101
-            username: admin
-            password: NokiaSrl1!
+            username: ${SRLINUX_USERNAME}
+            password: ${SRLINUX_PASSWORD}
             optional_args:
                insecure: True
 ```
@@ -256,6 +259,8 @@ You can see that we need to provide the IPs, and SSH credentials for our lab dev
 Let's go ahead and run it:
 
 ```
+SRLINUX_USERNAME="admin"
+SRLINUX_PASSWORD="NokiaSrl1!"
 ./6_start_device_discovery.sh
 ```
 

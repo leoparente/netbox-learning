@@ -42,17 +42,9 @@ sudo systemctl start docker
 echo "--- Installing ContainerLab ---"
 curl -sL https://containerlab.dev/setup | sudo -E bash -s "install-containerlab"
 
-# Add the current user to the Docker group
-current_user=$(whoami)
-if ! groups "$current_user" | grep -q "\bdocker\b"; then
-    echo "Adding user $current_user to the docker group."
-    sudo usermod -aG docker "$current_user"
-    echo "Please log out and back in for the group change to take effect."
-fi
-
 # Creating new user and adding to the correct groups, and set the permissions on the cloned repo
 USERNAME="quickstart"
-sudo useradd -m -s /bin/bash ${USERNAME}
+sudo useradd -m -d "$(pwd)" -s /bin/bash ${USERNAME}
 sudo passwd -d ${USERNAME}
 sudo usermod -aG sudo ${USERNAME}
 sudo usermod -aG docker ${USERNAME}

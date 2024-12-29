@@ -19,7 +19,7 @@ You can also read an in-depth overview of this solution on the NetBox Labs [Blog
 The code is split over two directories:
 
 ### playbooks
-These are the playbooks that push configuration changes out to the network devices. These are run as jobs by the Automation Execution element of Ansible Automation Platform.
+These are the playbooks that push configuration changes out to the network devices. They are run as jobs by the Automation Execution element of Ansible Automation Platform.
 
 ### rulebooks
 This code defines the rules that trigger jobs in Event Driven Ansible and configures the port that EDA listens on for NetBox event data arriving in the form of webhooks.

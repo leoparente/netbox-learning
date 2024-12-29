@@ -1,0 +1,35 @@
+---
+- name: Configure NTP on network devices using NetBox inventory config_context
+  connection: network_cli
+  hosts: sites_melbourne
+  gather_facts: no
+
+  tasks:
+    - name: Extract NTP servers from NetBox inventory config_context
+      set_fact:
+        ntp_servers: "{{ hostvars[inventory_hostname].config_context[0].ntp_servers | default([]) }}"
+
+    - name: Render NTP configuration using Jinja2 template
+      template:
+        src: templates/ntp_config.j2
+        dest: /tmp/ntp_config_{{ inventory_hostname }}.yml
+
+    - name: Apply NTP configuration to Arista EOS devices
+      when: ansible_network_os == 'arista.eos.eos'
+      arista.eos.eos_ntp_global:
+        config: "{{ lookup('file', '/tmp/ntp_config_{{ inventory_hostname }}.yml') | from_yaml }}"
+        state: replaced
+
+    - name: Retrieve running configuration NTP section
+      arista.eos.eos_command:
+        commands: ["show running-config | section ntp"]
+      register: ntp_config
+
+    - name: Display NTP configuration
+      debug:
+        var: ntp_config.stdout_lines
+
+    - name: Remove temporary NTP configuration files
+      file:
+        path: "/tmp/ntp_config_{{ inventory_hostname }}.yml"
+        state: absent

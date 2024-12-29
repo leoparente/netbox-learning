@@ -1,0 +1,23 @@
+
+- name: Events on SQS
+  sources:
+    - ansible.eda.aws_sqs_queue:
+        access_key: "{{ aws_access_key }}"
+        secret_key: "{{ aws_secret_key }}"
+        region: "{{ region }}"
+        name: "{{ queue_name }}"
+        delay_seconds: "{{ delay_seconds }}"
+
+  rules:
+
+    - name: rule1
+      condition: event.y.z == "something"
+      action:
+        run_job_template:
+          name: "Run Job Template"
+          organization: Default
+          job_args:
+            extra_vars:
+              var_one: "{{ event.y.z.one }}"
+              var_two: "{{ event.y.z.two }}"
+              var_three: "{{ event.y.z.three }}"

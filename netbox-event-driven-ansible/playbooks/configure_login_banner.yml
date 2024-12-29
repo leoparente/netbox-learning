@@ -1,0 +1,27 @@
+---
+- name: Configure Login Banner on network devices using NetBox Config Context data
+  connection: network_cli
+  hosts: sites_melbourne
+  gather_facts: no
+
+  tasks:
+    - name: Extract Login Banner from NetBox inventory config_context
+      set_fact:
+        login_banner: "{{ hostvars[inventory_hostname].config_context[0].login_banner[0] | default([]) }}"
+
+    - name: Apply Login Banner configuration to Arista EOS devices
+      when: ansible_network_os == 'arista.eos.eos'
+      arista.eos.eos_banner:
+        banner: login
+        text: |
+          "{{ login_banner }}"
+        state: present
+
+    - name: Retrieve running configuration
+      arista.eos.eos_command:
+        commands: ["show running-config"]
+      register: banner_config
+
+    - name: Display Login Banner configuration
+      debug:
+        var: banner_config.stdout_lines

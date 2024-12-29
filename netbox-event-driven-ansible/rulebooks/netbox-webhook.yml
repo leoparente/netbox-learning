@@ -1,0 +1,50 @@
+
+---
+- name: Listen for netbox events on a webhook
+  hosts: all
+  sources:
+    - ansible.eda.webhook:
+        host: 0.0.0.0
+        port: 5001
+
+  rules:
+
+## NTP
+  - name: NTP updates
+    condition: event.payload.event == "job_ended" and event.payload.model == "branch" and event.payload.data.log is search("config context ntp_servers", ignorecase=true)
+    action:
+      run_job_template:
+        organization: "Default"
+        name: "Configure NTP Servers"
+
+## VLAN created
+  - name: VLAN created
+    condition: event.payload.event == "job_ended" and event.payload.model == "branch" and event.payload.data.log is search("Creating VLAN", ignorecase=true)
+    action:
+      run_job_template:
+        organization: "Default"
+        name: "Configure VLANs"
+
+## VLAN deleted
+  - name: VLAN deleted
+    condition: event.payload.event == "job_ended" and event.payload.model == "branch" and event.payload.data.log is search("Deleting VLAN", ignorecase=true)
+    action:
+      run_job_template:
+        organization: "Default"
+        name: "Configure VLANs"
+
+## Login banner
+  - name: Update login banner
+    condition: event.payload.event == "job_ended" and event.payload.model == "branch" and event.payload.data.log is search("config context login_banner updated", ignorecase=true)
+    action:
+      run_job_template:
+        organization: "Default"
+        name: "Configure Login Banner"
+
+## New device workflow
+  - name: New Device Added
+    condition: event.payload.event == "job_ended" and event.payload.model == "branch" and event.payload.data.log is search("Creating device", ignorecase=true)
+    action:
+      run_workflow_template:
+        organization: "Default"
+        name: "Provision New Device Workflow"

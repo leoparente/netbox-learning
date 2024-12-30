@@ -270,6 +270,10 @@ Keep an eye on the Diode ingestion logs by going to the left-hand menu in NetBox
 
 <img src="images/device_ingestion_logs.png" alt="Diode Device Ingestion Logs" title="Diode Device Ingestion Logs" width="1000" />
 
+> [!WARNING]  
+> You may notice some failures in the ingestion logs that look like this due to a known issue in Diode. We're working on a fix.  
+> `IP Address  Failed  agent1/device-discovery/0.3.0 diode-sdk-python/0.4.2  ab6b46cd-441f-4e26-aab4-7ceaab0d34db`  
+
 You'll also notice in our configuration above that we defined the default site for devices to be `New York NY`. Go to NetBox and click on `Organization` -> `Sites` where you'll now see our `New York NY` site.
 
 Now click on `New York NY` and then `Devices` in the right hand pane, where you will now see our devices.

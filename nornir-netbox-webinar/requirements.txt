@@ -6,7 +6,7 @@ colorama==0.4.6
 cryptography==43.0.1
 future==0.18.3
 idna==3.7
-Jinja2==3.1.4
+Jinja2==3.1.5
 junos-eznc==2.6.8
 lxml==4.9.3
 markdown-it-py==3.0.0

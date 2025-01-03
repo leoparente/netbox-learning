@@ -27,7 +27,7 @@ You will be able to run simple scripts to use both features of NetBox Discovery:
 > [!TIP]
 >  
 > - We recommend using a machine with at least 4GB of RAM and 2 cores. If you're going to run Cisco IOS images, you'll need at least 8GB of RAM  
-> - The workshop has only been tested on Ubuntu 22.04. It _should_ work on other Linux distros but if you hit any problems please create an issue on in GitHub  
+> - The workshop has only been tested on Ubuntu 22.04. It _should_ work on other Linux distros but if you hit any problems please create an [issue](https://github.com/netboxlabs/netbox-learning/issues) in GitHub  
 > - Unfortunately MacOS is not supported. The workshop relies heavily on ContainerLab which does not have native support for MacOS  
 
 
@@ -77,7 +77,7 @@ source 1_set_envvars.sh
 ./2_start_netbox.sh
 ```
 
-When this step finishes you can check that NetBox is working by logging NetBox using the URL and credentials provided in the command line output.
+When this step finishes you can check that NetBox is working by logging into NetBox using the URL and credentials provided in the command line output.
 
 ### Start Diode.
 

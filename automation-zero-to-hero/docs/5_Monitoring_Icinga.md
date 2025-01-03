@@ -120,3 +120,7 @@ We've only dipped our toes in the capabilities of the NetBox Icinga integration 
 >  
 > Now that Icinga is continously monitoring NetBox for its configuration, why not try breaking the service checks?  
 > Try changing the management IP on one of our lab devices to be incorrect and watch in Icinga for what happens!
+
+_____
+
+Next Section - [**Configuration Assurance - Netpicker**](./6_Configuration_Assurance_Netpicker.md)

@@ -137,3 +137,5 @@ This is exactly why we spent most of the workshop focussing on other areas of th
 > **Exercise** Go back to Netpicker, create new backups for our devices, and then run the policy. The NTP check should pass!
 
 _____
+
+Next Section - [**Summary**](./8_Summary.md)

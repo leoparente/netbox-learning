@@ -117,7 +117,7 @@ We need some lab devices to run our device discovery against and for this we wil
 ./4_start_network.sh network/srl.clab.yml
 ```
 
-After a short while you should see a summary on our ContainerLab devices, like this:
+After a short while you should see a summary of your ContainerLab devices, like this:
 
 ```
 ╭──────────────────────────────────────┬──────────────────────────────┬─────────┬────────────────╮
@@ -179,7 +179,7 @@ Here you can see various variables that will be populated automatically when you
             - ${DOCKER_SUBNET}
 ```
 
-`targets` is a list of single IPs, an IP ranges or subnets. In this case when we run the script we will insert a single subnet for our ContainerLab devices, which as mentioned above is `172.24.0.0/24`
+`targets` is a list of individual IPs, IP ranges or subnets. In this case when we run the script we will insert a single subnet for our ContainerLab devices, which as mentioned above is `172.24.0.0/24`
 
 ___
 

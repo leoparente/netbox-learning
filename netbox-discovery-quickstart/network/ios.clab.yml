@@ -2,10 +2,11 @@ name: discovery-quickstart-cisco
 
 mgmt:
   network: discovery-quickstart
+  ipv4-subnet: 172.24.0.0/24
 
 topology:
   nodes:
     ios1:
       kind: vr-csr
       image: mrmrcoleman/vr-csr:17.03.06
-      mgmt-ipv4: 172.24.0.100
+      mgmt-ipv4: 172.24.0.102

@@ -1,6 +1,20 @@
 #!/bin/bash
 set -euo pipefail
 
+# Check if all required environment variables are set
+REQUIRED_VARS=("DOCKER_NETWORK" "DOCKER_SUBNET")
+
+# Create the docker network if it doesn't already exist
+if ! docker network inspect "$DOCKER_NETWORK" &>/dev/null; then
+    echo "Creating Docker network: $DOCKER_NETWORK with subnet: $DOCKER_SUBNET"
+    docker network create \
+        --driver=bridge \
+        --subnet="$DOCKER_SUBNET" \
+        "$DOCKER_NETWORK"
+else
+    echo "Docker network '$DOCKER_NETWORK' already exists."
+fi
+
 # Check if directory parameter is passed
 if [ $# -eq 0 ]; then
   echo "Usage: $0 <network_directory>"

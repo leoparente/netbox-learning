@@ -25,7 +25,7 @@ echo
 
 # Create plugin files
 cat <<EOF > plugin_requirements.txt
-slurpit_netbox
+slurpit-netbox==1.0.45
 EOF
 
 cat <<EOF > Dockerfile-Plugins
